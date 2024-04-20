@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <div id = "navbar" class = "navbar">     
+
+    <div class = "nav-link-section">
+
+      <a class="nav-link" href = "landing_page.html" style="font-family: Adlanta;">
+        ALCHEMY INTERNSHIPS
+      </a>
+
+      <a class="nav-link" href = "home.html">HOME</a>
+      <a class="nav-link" href = "view_students_page.html">STUDENTS</a>
+      <a class="nav-link" href = "view_projects_page.html">PROJECTS</a>
+      <a class="nav-link" href = "view_reps_page.html">REPS</a>
+      <a class="nav-link" href = "view_companies_page.html">COMPANIES</a>
+      <a class="nav-link" href = "matchmaking_page.html">MATCH</a>
+
+      <!--
+      <a class="nav-link" href="index.html">
+
+        <img src ="profile_icon.svg" style="width:20px; height:20px;">
+
+        <div>
+          PROFILE
+        </div>
+      </a>
+      -->
+
+    </div>
+
+  </div>
+
+  <div id="filter-pane-overlay">
+    <div class ="filter-pane">
+      <div class = "filter-menu">
+        
+        <div class ="pane-header">
+
+          <div class ="pane-header-text">
+            FILTERS
+          </div>
+
+          <div class = "pane-header-button">
+
+            <div class="button-compound" id="filter-button onclick=" onclick="closeFilterMenu()">
+
+              <img src ="close.svg" class="button-image">
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <form id= "form" class ="form">
+              
+            <table style="width:98%;">
+              
+              <tr class ="form-field">
+                <td>
+                  <label for="country_filter" class ="form-field-item">
+                    Country:
+                  </label>
+                </td>
+                <td>
+
+                  <select id="country_filter" name="country_filter" class="form-field-item">
+
+                    <option value="" class="select">All</option>
+                    <option value="[country.name]" class="select">[country.name]</option>
+                    <option value="[country.name]" class="select">[country.name]</option>
+                    <option value="[country.name]" class="select">[country.name]</option>
+                    <option value="[country.name]" class="select">[country.name]</option>
+                    <option value="[country.name]" class="select">[country.name]</option>
+
+                  </select>
+
+                </td>
+              </tr>
+              
+            </table>
+          
+        </form>
+
+        <div class ="pane-controls">
+
+          <button class="button-compound key hover" type="submit" form="form" onclick="closeFilterMenu()">
+            <div class="button-compound-text">
+              APPLY
+            </div>
+          </button>
+
+          <button class="button-compound key hover" type="reset" form="form">
+            <div class="button-compound-text">
+              CLEAR
+            </div>
+          </button>
+
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+
+  <div class = "page-header">
+    <div>
+      VIEW COMPANIES
+    </div>
+  </div>
+  
+  <div class = "page-content">
+
+    <div class = "page-segment" style="width:25%;">
+
+      <div class="pane">
+
+        <div class = "pane-content">
+          
+          <div class = "pane-header">
+            
+            <div class = "pane-header-text"> 
+
+              <div> COMPANIES </div>
+              
+            </div>
+
+            <div class = "pane-header-button"> 
+
+              <div class="button-compound" id="filter-button" onclick="openFilterMenu()">
+                
+                <img src ="filter_icon.svg" class="button-image">
+                            
+              </div>
+              
+            </div>
+            
+          </div>
+
+          <div class = "pane-data">
+
+            <div class ="list-item">
+              <a class = "list-item-link">[company.name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[company.name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[company.name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[company.name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[company.name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[company.name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[company.name]</a>
+            </div>
+            
+          </div>
+          
+        </div>
+        
+      </div>
+
+    </div>
+
+    <div class = "page-segment" style="width:75%;"">
+
+      <div class= "pane">
+
+        <div class = "pane-content">
+
+          <div class = "pane-header">
+
+            <div class = "pane-header-text"> 
+
+              <div> COMPANY INFORMATION </div>
+
+            </div>
+
+            <div class = "pane-header-button"> 
+
+              <a class="button-compound" id="new-tabe-button">
+
+                <img src ="new_tab.svg" class="button-image">
+
+              </a>
+
+            </div>
+
+          </div>
+          
+          <div class = "pane-data">
+
+            <div class ="card-text-header center">
+              [company.name]
+            </div>
+
+            <div class ="card-text-header">
+              Meta Info
+            </div>
+
+            <table class ="card-text-column">
+              <tr>
+                <td>Database ID:</td>
+                <td>[company.id]</td>
+              </tr>
+              <tr>
+                <td>Submitted by:</td>
+                <td>[company.init_representative.id]</td>
+              </tr>
+            </table>
+
+            <div class ="card-text-header">
+              Info
+            </div>
+
+            <table class ="card-text-column">
+              <tr>
+                <td>Company Name:</td>
+                <td>[company.name]</td>
+              </tr>
+              <tr>
+                <td>Number of Representatives:</td>
+                <td>[num_representatives]</td>
+              </tr>
+            </table>
+
+            <div class ="card-text-header">
+              Social & Contact
+            </div>
+
+            <table class ="card-text-column">
+              <tr>
+                <td>Website:</td>
+                <td>[company.website]</td>
+              </tr>
+              <tr>
+                <td>Contact #:</td>
+                <td>[company.contact]</td>
+              </tr>
+              <tr>
+                <td>Email:</td>
+                <td>[company.email]</td>
+              </tr>
+            </table>
+
+          </div>
+
+          <div class ="pane-controls">
+
+            <div class="button-compound key hover">
+              <div class="button-compound-text">
+                VIEW PROJECTS
+              </div>
+            </div>
+
+            <div class="button-compound key hover">
+              <div class="button-compound-text">
+                VIEW REPRESENTATIVES
+              </div>
+            </div>
+
+          </div>
+
+        </div>     
+
+      </div>
+
+    </div>
+
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+
+</html>

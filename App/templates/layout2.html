@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href="{{ url_for('static', filename='alchemy_style.css') }}" rel="stylesheet" type="text/css"/>
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='icons/logo_color.svg') }}">
+  <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+
+  {% block body %}{% endblock %}
+  
+  <script src="{{ url_for('static', filename='alchemy_script.js') }}"></script>
+</body>
+
+</html>

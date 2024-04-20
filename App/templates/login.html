@@ -1,0 +1,42 @@
+{% extends "layout2.html" %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block body %}
+<div class = "page-content" style="height:100%; background-color:var(--contrast);">
+
+    <div class = "page-segment" style="width:45%; height:90%;">
+
+      <div class= "pane">
+
+        <form class ="login-form login-form-item" method="post">
+
+          <div>
+            <img src = "{{ url_for('static', filename='icons/logo_full.svg') }}" width= "300px" height= "300px">
+          </div>
+          
+          <div style="font-size:40px; font-weight:bold; margin: 4vh; color:var(--primary)">
+            LOG IN
+          </div>
+          
+          <input type="text" placeholder="Username" name="username" class="login-form-item" required>
+          <input type="password" placeholder="Password" name="password" class="login-form-item" required>
+
+          <button class="button-compound key hover login-form-item">
+            <div class="button-compound-text">
+              LOG IN
+            </div>
+          </button>
+
+          <div style="margin-top: 5vh;">
+            Don't have an account? <a href="/signuptype">Sign Up here</a>
+          </div>
+          
+        </form>  
+
+      </div>
+
+    </div>
+
+  </div>
+{% endblock %}

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <div id = "navbar" class = "navbar">     
+
+    <div class = "nav-link-section">
+
+      <a class="nav-link" href = "landing_page.html" style="font-family: Adlanta;">
+        ALCHEMY INTERNSHIPS
+      </a>
+
+      <a class="nav-link" href = "home.html">HOME</a>
+      <a class="nav-link" href = "view_students_page.html">STUDENTS</a>
+      <a class="nav-link" href = "view_projects_page.html">PROJECTS</a>
+      <a class="nav-link" href = "view_reps_page.html">REPS</a>
+      <a class="nav-link" href = "view_companies_page.html">COMPANIES</a>
+      <a class="nav-link" href = "matchmaking_page.html">MATCH</a>
+
+      <!--
+      <a class="nav-link" href="index.html">
+
+        <img src ="profile_icon.svg" style="width:20px; height:20px;">
+
+        <div>
+          PROFILE
+        </div>
+      </a>
+      -->
+
+    </div>
+
+  </div>
+
+  <div class = "page-header">
+    <div>
+      VIEW PROJECT
+    </div>
+  </div>
+  
+  <div class = "page-content">
+
+    <div class = "page-segment" style="width:100%;"">
+
+      <div class="pane">
+
+        <div class ="pane-content">
+
+          <div class = "pane-header">
+
+            <div class = "pane-header-text"> 
+
+              <div> PROJECT INFORMATION </div>
+
+            </div>
+
+          </div>
+
+          <div class = "pane-data">
+
+            <div class ="card-text-header center">
+              [project.name]
+            </div>
+
+            <div class ="card-text-header">
+              Meta Info
+            </div>
+
+            <table class ="card-text-column">
+              <tr>
+                <td>Database ID:</td>
+                <td>[project.id]</td>
+              </tr>
+              <tr>
+                <td>Submitted by:</td>
+                <td>[project.representative_id]</td>
+              </tr>
+            </table>
+
+            <div class ="card-text-header">
+              General Info
+            </div>
+
+            <table class ="card-text-column">
+              <tr>
+                <td>Company:</td>
+                <td>[project.company.name]</td>
+              </tr>
+              <tr>
+                <td>Project Title:</td>
+                <td>[project.name]</td>
+              </tr>
+            </table>
+
+            <div class ="card-text-header">
+              Description
+            </div>
+
+            <div class ="card-text">[project.description]</div>
+
+            <div class ="card-text-header">
+              Details
+            </div>
+
+            <table class ="card-text-column">
+
+              <tr>
+                <td>Format:</td>
+                <td>[project.format]</td>
+              </tr>
+              <tr>
+                <td>Duration:</td>
+                <td>[project.duration]</td>
+              </tr>
+            </table>
+
+            <div class ="card-text-header center">
+              REQUIREMENTS
+            </div>
+
+            <div class ="card-text-header">
+              Summary
+            </div>
+
+            <div class ="card-text">[project.description]</div>
+
+            <div class ="card-text-header">
+              Disciplines
+            </div>
+
+            <table class ="card-text-column">
+              <tr>
+                <td>[project.requirement.discipline.area.icon]</td>
+                <td>[project.requirement..discipline.name]</td>
+              </tr>
+              <tr>
+                <td>[project.requirement.discipline.area.icon]</td>
+                <td>[project.requirement.discipline.name]</td>
+              </tr>
+              <tr>
+                <td>[project.requirement.discipline.area.icon]</td>
+                <td>[project.requirement.discipline.name]</td>
+              </tr>
+              <tr>
+                <td>[project.requirement.discipline.area.icon]</td>
+                <td>[project.requirement.discipline.name]</td>
+              </tr>
+            </table>
+
+            <div class ="card-text-header">
+              Other
+            </div>
+
+            <table class ="card-text-column">
+              <tr>
+                <td>Year</td>
+                <td>[project.requirement.year]</td>
+              </tr>
+              <tr>
+                <td>Residence</td>
+                <td>[project.requirement.residence]</td>
+              </tr>
+            </table>
+
+          </div>
+
+          <div class = "pane-controls">
+
+          <div class="button-compound hover">
+            <div class="button-compound-text">
+              EDIT
+            </div>
+          </div>
+
+          <div class="button-compound key hover">
+            <div class="button-compound-text">
+              VIEW SHORTLIST
+            </div>
+          </div>
+
+          <div class="button-compound key hover">
+            <div class="button-compound-text">
+              UPDATE SHORTLIST
+            </div>
+          </div>
+
+          <div class="button-compound hover">
+            <div class="button-compound-text">
+              REMOVE
+            </div>
+          </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+
+</html>

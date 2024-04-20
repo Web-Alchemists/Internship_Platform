@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <div id = "navbar" class = "navbar">     
+
+    <div class = "nav-link-section">
+
+      <a class="nav-link" href = "landing_page.html" style="font-family: Adlanta;">
+        ALCHEMY INTERNSHIPS
+      </a>
+
+      <a class="nav-link" href = "landing_page.html">LANDING</a>
+      <a class="nav-link" href = "home.html">HOME</a>
+      <a class="nav-link" href = "view_page.html">VIEW</a>
+      <a class="nav-link" href = "form.html">FORM</a>
+
+      <!--
+      <a class="nav-link" href="index.html">
+
+        <img src ="profile_icon.svg" style="width:20px; height:20px;">
+
+        <div>
+          PROFILE
+        </div>
+      </a>
+      -->
+
+    </div>
+
+  </div>
+
+  <div class = "page-header">
+    <div>
+      PROJECT FORM
+    </div>
+  </div>
+
+  <div class = "page-content">
+
+    <div class = "page-segment" style="width:100vw;">
+      
+      <div class="pane">
+
+        <div class ="pane-content">
+
+          <div class = "pane-header" style="align-items: center;">
+
+            <div class = "pane-header-text"> 
+
+              <div> PROJECT FORM </div>
+
+            </div>
+
+          </div>
+
+          <form id= "form" class ="form">
+
+            <!-- General Info Fields -->
+            <table class="form-table" style="width:98%;">
+
+              <tr>
+                <td>
+                  <div class ="card-text-header">
+                    INFO
+                  </div>
+                </td>
+              </tr>
+              
+              <!--- Details Field --->
+              <tr class ="form-field">
+                <td>
+                  <label for="name-field" class ="form-field-item">
+                    Name:
+                  </label>
+                </td>
+                <td>
+                  <input
+                    type = "text"
+                    id = "name-field"
+                    name = "name"
+                    value = ""
+                    class = "form-field-item"
+                    placeholder = "Name" 
+                    required
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div class ="card-text form-field-item">
+                    Description
+                  </div>
+                </td>
+              </tr>
+
+              <!--- Description Field --->
+              <tr class ="form-field">
+                <td>
+
+                  <textarea
+                    id = "description-field"
+                    name = "description"
+                    class = "form-field-item"
+                    value = ""
+                    placeholder = "Explain why you are interested in the internship programme"
+                    rows = "20"
+                    cols = "100"
+                    required
+                  ></textarea>
+
+                </td>
+              </tr>
+
+            </table>
+
+            <!-- Details Fields -->
+            <table class="form-table" style="width:98%;">
+
+              <tr>
+                <td>
+                  <div class ="card-text-header">
+                    DETAILS
+                  </div>
+                </td>
+              </tr>
+              
+              <!--- Capacity Field --->
+              <tr class ="form-field">
+                <td>
+                  <label for="capacity-field" class ="form-field-item">
+                    Capacity:
+                  </label>
+                </td>
+                <td>
+                  <input
+                    type = "number"
+                    id = "capacity-field"
+                    name = "capacity"
+                    value = ""
+                    class = "form-field-item"
+                    required
+                  />
+                </td>
+              </tr>
+
+              <!--- Year Field --->
+              <tr class ="form-field">
+
+                <td>
+                  <label for="duration-field" class ="form-field-item">
+                    Format:
+                  </label>
+                </td>
+                <td>
+
+                  <select id="duration-field" name="duration" class="form-field-item" required>
+                    <option value="" disabled selected>[select]</option>
+                    <option value="physical" class="select">Physical</option>
+                    <option value="online" class="select">Online</option>
+                    <option value="hybird" class="select">Hybrid</option>
+
+                  </select>
+
+                </td>
+              </tr>
+
+              <!--- Email Field --->
+              <tr class ="form-field">
+                <td>
+                  <label for="capacity-field" class ="form-field-item">
+                    Duration (Weeks):
+                  </label>
+                </td>
+                <td>
+                  <input
+                    type = "number"
+                    id = "capacity-field"
+                    name = "capacity"
+                    value = ""
+                    class = "form-field-item"
+                    required
+                  />
+                </td>
+              </tr>
+
+            </table>
+
+            <!-- Transcript Fields -->
+            <table class="form-table" style="width:98%;">
+
+              <tr class ="form-field">
+                <td>
+                  <div class ="card-text-header">
+                    REQUIREMENTS
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div class ="card-text form-field-item">
+                    Requirements Summary
+                  </div>
+                </td>
+              </tr>
+
+              <!--- Summary Field --->
+              <tr class ="form-field">
+                <td>
+
+                  <textarea
+                    id = "summary-field"
+                    name = "summary"
+                    class = "form-field-item"
+                    value = ""
+                    placeholder = "Explain the general requirements of the internship with regards to the hard and soft skills desired"
+                    rows = "20"
+                    cols = "100"
+                    required
+                  ></textarea>
+
+                </td>
+              </tr>
+
+              <!-- Discipline Field -->
+              <tr class="form-field-dynamic">
+
+                <td style="vertical-align: top;">
+                  <div class ="card-text">
+                    DISCIPLINES
+                  </div>
+                </td>
+
+                <td id ="discipline-field">
+                  
+                  <div class ="button-compound" id= "add-discipline-button" style="width:10vw;">
+                    
+                    <div class = "pane-header-button"> 
+
+                      <div class="button-compound contrast" id="filter-button" onclick="addDiscipline()">
+
+                        <img src ="add_black.svg" class="button-compound-image">
+                        <div class="button-compound-text">
+                          ADD
+                        </div>
+
+                      </div>
+
+                    </div>
+                    
+                  </div>
+                  
+                </td>
+              
+              </tr>
+
+              <!--- Year Requirement Field --->
+              <tr class ="form-field">
+
+                <td>
+                  <label for="year-field" class ="form-field-item">
+                    Year Requirement:
+                  </label>
+                </td>
+                <td>
+
+                  <select id="year-field" name="year" class="form-field-item" required>
+
+                    <option value="" disabled selected>None</option>
+                    <option value="1" class="select">1</option>
+                    <option value="2" class="select">2</option>
+                    <option value="3" class="select">3</option>
+                    <option value="4" class="select">4</option>
+                    <option value="5" class="select">5</option>
+
+                  </select>
+
+                </td>
+              </tr>
+
+              <!--- Residence Field --->
+              <tr class ="form-field">
+                <td>
+                  <label for="residence-field" class ="form-field-item">
+                    Residence Requirement:
+                  </label>
+                </td>
+                <td>
+
+                  <select id="residence-field" name="residence" class="form-field-item" required>
+                    <option value="" disabled selected>[select]</option>
+                    <option value="Option 1" class="select">Option 1</option>
+                    <option value="Option 2" class="select">Option 2</option>
+                    <option value="Option 3" class="select">Option 3</option>
+                    <option value="Option 4" class="select">Option 4</option>
+                    <option value="Option 5" class="select">Option 5</option>
+
+                  </select>
+
+                </td>
+              </tr>
+
+            </table>
+
+          </form>
+
+          <div class = "pane-controls">
+
+            <button class="button-compound key hover" type="submit" form="form">
+
+              <img src ="checkmark_white.svg" class="button-compound-image">
+              
+              <div class="button-compound-text">
+                CONFIRM
+              </div>
+              
+            </button>
+            
+          </div>
+          
+        </div>
+      
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  
+  <script src="script.js"></script>
+</body>
+
+</html>

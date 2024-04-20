@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <div id = "navbar" class = "navbar">     
+
+    <div class = "nav-link-section">
+
+      <a class="nav-link" href = "landing_page.html" style="font-family: Adlanta;">
+        ALCHEMY INTERNSHIPS
+      </a>
+
+      <a class="nav-link" href = "home.html">HOME</a>
+      <a class="nav-link" href = "view_students_page.html">STUDENTS</a>
+      <a class="nav-link" href = "view_projects_page.html">PROJECTS</a>
+      <a class="nav-link" href = "view_reps_page.html">REPS</a>
+      <a class="nav-link" href = "view_companies_page.html">COMPANIES</a>
+      <a class="nav-link" href = "matchmaking_page.html">MATCH</a>
+
+      <!--
+      <a class="nav-link" href="index.html">
+
+        <img src ="profile_icon.svg" style="width:20px; height:20px;">
+
+        <div>
+          PROFILE
+        </div>
+      </a>
+      -->
+
+    </div>
+
+  </div>
+
+  <div id="filter-pane-overlay">
+    
+    <div class ="filter-pane">
+      
+      <div class = "filter-menu">
+        
+        <div class ="pane-header">
+
+          <div class ="pane-header-text">
+            FILTERS
+          </div>
+
+          <div class = "pane-header-button">
+
+            <div class="button-compound" id="filter-button onclick=" onclick="closeFilterMenu()">
+
+              <img src ="close.svg" class="button-image">
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <form id= "form" class ="form">
+              
+            <table style="width:98%;">
+              
+              <tr class ="form-field">
+                <td>
+                  <label for="gpa_filter" class ="form-field-item">
+                    Minimum GPA:
+                  </label>
+                </td>
+                <td>
+                  <input
+                    type = "number"
+                    id = "gpa_filter"
+                    name = "gpa_filter"
+                    class = "form-field-item"
+                    value = "0"
+                    min = "0"
+                    max = "4"
+                    step = "0.01"
+                    placeholder = "0.00"
+                  />
+                </td>
+              </tr>
+
+              <!-- <tr class ="form-field">
+                
+                  <td>
+                    <div class ="form-field-item">
+                      Shortlisted:
+                    </div>
+                  </td>
+                    
+                  <td>
+                    <label class="container">
+                      
+                      <input
+                        type = "checkbox"
+                        id = "check_filter"
+                        name = "is_shortlisted"
+                        value = ""
+                        class = "form-field-item checkbox-hide"
+                      >
+
+                      <span class="checkmark"></span>
+                      
+                    </label>
+                  </td>
+         
+              </tr> -->
+
+              <tr class ="form-field">
+                <td>
+                  <label for="faculty_filter" class ="form-field-item">
+                    Faculty:
+                  </label>
+                </td>
+                <td>
+
+                  <select id="faculty_filter" name="faculty_filter" class="form-field-item">
+
+                    <option value="" class="select">All</option>
+                    <option value="[area.name]" class="select">[area.name]</option>
+                    <option value="[area.name]" class="select">[area.name]</option>
+                    <option value="[area.name]" class="select">[area.name]</option>
+                    <option value="[area.name]" class="select">[area.name]</option>
+                    <option value="[area.name]" class="select">[area.name]</option>
+
+                  </select>
+
+                </td>
+              </tr>
+
+              <tr class ="form-field">
+                <td>
+                  <label for="major_filter" class ="form-field-item">
+                    Major:
+                  </label>
+                </td>
+                <td>
+
+                  <select id="major_filter" name="major_filter" class="form-field-item">
+
+                    <option value="" class="select">All</option>
+                    <option value="[programme.name]" class="select">[programme.faculty] - [programme.name]</option>
+                    <option value="[programme.name]" class="select">[programme.faculty] - [programme.name]</option>
+                    <option value="[programme.name]" class="select">[programme.faculty] - [programme.name]</option>
+                    <option value="[programme.name]" class="select">[programme.faculty] - [programme.name]</option>
+                    <option value="[programme.name]" class="select">[programme.faculty] - [programme.name]</option>
+
+                  </select>
+
+                </td>
+              </tr>
+
+              <tr class ="form-field">
+                <td>
+                  <label for="programme_filter" class ="form-field-item">
+                    Programme:
+                  </label>
+                </td>
+                <td>
+
+                  <select id="programme_filter" name="programme_filter" class="form-field-item">
+
+                    <option value="" class="select">All</option>
+                    <option value="[programme.name]" class="select">[programme.faculty] - [programme.name]</option>
+                    <option value="[programme.name]" class="select">[programme.faculty] - [programme.name]</option>
+                    <option value="[programme.name]" class="select">[programme.faculty] - [programme.name]</option>
+                    <option value="[programme.name]" class="select">[programme.faculty] - [programme.name]</option>
+                    <option value="[programme.name]" class="select">[programme.faculty] - [programme.name]</option>
+                    
+                  </select>
+                  
+                </td>
+              </tr>
+
+              <tr class ="form-field">
+                <td>
+                  <label for="course_filter" class ="form-field-item">
+                    Course:
+                  </label>
+                </td>
+                <td>
+
+                  <select id="course_filter" name="course_filter" class="form-field-item">
+
+                    <option value="" class="select">All</option>
+                    <option value="[course.name]" class="select">[course.code] - [course.name]</option>
+                    <option value="[course.name]" class="select">[course.code] - [course.name]</option>
+                    <option value="[course.name]" class="select">[course.code] - [course.name]</option>
+                    <option value="[course.name]" class="select">[course.code] - [course.name]</option>
+                    <option value="[course.name]" class="select">[course.code] - [course.name]</option>
+
+                  </select>
+
+                </td>
+              </tr>
+
+              <tr class ="form-field">
+                <td>
+                  <label for="residence_filter" class ="form-field-item">
+                    Residence:
+                  </label>
+                </td>
+                <td>
+
+                  <select
+                    id = "residence_filter"
+                    name = "residence_filter"
+                    class = "form-field-item multiple"
+                  >
+
+                    <option value="" class="select">All</option>
+                    <option value="[residnece.name]" class="select">[residnece.name]</option>
+                    <option value="[residnece.name]" class="select">[residence.name]</option>
+                    <option value="[residnece.name]" class="select">[residence.name]</option>
+                    <option value="[residence.name]" class="select">[residence.name]</option>
+                    <option value="[residence.name]" class="select">[residence.name]</option>
+                    
+
+                  </select>
+
+                </td>
+              </tr>
+
+              <tr class ="form-field">
+                <td>
+                  <label for="status_filter" class ="form-field-item">
+                    Status:
+                  </label>
+                </td>
+                <td>
+
+                  <select id="status_filter" name="status_filter" class="form-field-item">
+
+                    <option value="" class="select">Any</option>
+                    <option value="is_shortlisted" class="select">Shortlisted</option>
+                    <option value="not_shortlisted" class="select">Not Shortlisted</option>
+
+                  </select>
+
+                </td>
+              </tr>
+              
+            </table>
+          
+        </form>
+
+        <div class ="pane-controls">
+
+          <button class="button-compound key hover" type="submit" form="form" onclick="closeFilterMenu()">
+            <div class="button-compound-text">
+              APPLY
+            </div>
+          </button>
+
+          <button class="button-compound key hover" type="reset" form="form">
+            <div class="button-compound-text">
+              CLEAR
+            </div>
+          </button>
+
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+
+  <div class = "page-header">
+    <div>
+      VIEW STUDENTS
+    </div>
+  </div>
+  
+  <div class = "page-content">
+
+    <div class = "page-segment" style="width:25%;">
+
+      <div class="pane">
+
+        <div class = "pane-content">
+          
+          <div class = "pane-header">
+            
+            <div class = "pane-header-text"> 
+
+              <div> STUDENTS </div>
+              
+            </div>
+
+            <div class = "pane-header-button"> 
+
+              <div class="button-compound" id="filter-button" onclick="openFilterMenu()">
+                
+                <img src ="filter_icon.svg" class="button-image">
+                            
+              </div>
+              
+            </div>
+            
+          </div>
+
+          <div class = "pane-data">
+
+            <div class ="list-item">
+              <a class = "list-item-link">[student.first_name student.last_name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[student.first_name student.last_name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[student.first_name student.last_name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[student.first_name student.last_name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[student.first_name student.last_name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[student.first_name student.last_name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[student.first_name student.last_name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[student.first_name student.last_name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[student.first_name student.last_name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[student.first_name student.last_name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[student.first_name student.last_name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[student.first_name student.last_name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[student.first_name student.last_name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[student.first_name student.last_name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[student.first_name student.last_name]</a>
+            </div>
+            
+          </div>
+          
+        </div>
+        
+      </div>
+
+    </div>
+
+    <div class = "page-segment" style="width:75%;"">
+
+      <div class= "pane">
+
+        <div class = "pane-content">
+
+          <div class = "pane-header">
+
+            <div class = "pane-header-text"> 
+
+              <div> STUDENT INFORMATION </div>
+
+            </div>
+
+            <div class = "pane-header-button"> 
+
+              <a class="button-compound" id="new-tabe-button">
+
+                <img src ="new_tab.svg" class="button-image">
+
+              </a>
+
+            </div>
+
+          </div>
+          
+          <div class = "pane-data">
+
+            <div class ="card-text-header center">
+              [student.first_name student.last_name]
+            </div>
+
+            <div class ="card-text-header">
+              Meta Info
+            </div>
+
+            <table class ="card-text-column">
+              <tr>
+                <td>Database ID:</td>
+                <td>[student.id]</td>
+              </tr>
+            </table>
+
+            <div class ="card-text-header">
+              Bio
+            </div>
+
+            <table class ="card-text-column">
+              <tr>
+                <td>First Name:</td>
+                <td>[student.first_name]</td>
+              </tr>
+
+              <tr>
+                <td>Last Name:</td>
+                <td>[student.last_name]</td>
+              </tr>
+              <tr>
+                <td>Country of Residence:</td>
+                <td>[student.residence]</td>
+              </tr>
+            </table>
+
+            <div class ="card-text-header">
+              Contact
+            </div>
+
+            <table class ="card-text-column">
+              <tr>
+                <td>Contact #:</td>
+                <td>[student.contact]</td>
+              </tr>
+              <tr>
+                <td>Email:</td>
+                <td>[student.email]</td>
+              </tr>
+            </table>
+
+            <div class ="card-text-header">
+              Transcript
+            </div>
+
+            <table class ="card-text-column">
+
+              <tr>
+                <td>Student ID:</td>
+                <td>[student.student_id]</td>
+              </tr>
+              <tr>
+                <td>Year:</td>
+                <td>[student.year]</td>
+              </tr>
+              <tr>
+                <td>Major:</td>
+                <td>[student.major]</td>
+              </tr>
+              <tr>
+                <td>Major2:</td>
+                <td>[student.major2]</td>
+              </tr>
+              <tr>
+                <td>Minor:</td>
+                <td>[student.minor]</td>
+              </tr>
+              <tr>
+                <td>Minor2:</td>
+                <td>[student.minor2]</td>
+              </tr>
+              <tr>
+                <td>GPA:</td>
+                <td>[student.gpa]</td>
+              </tr>
+            </table>
+
+            <div class ="card-text-header">
+              Courses
+            </div>
+
+            <table class ="card-text-column">
+              <tr>
+                <th>CODE</td>
+                <th>NAME</td>
+                <th>GRADE</td>
+              </tr>
+              <tr>
+                <td>[student.course.code]</td>
+                <td>[student.course.name]</td>
+                <td>[student.course.grade]</td>
+              </tr>
+              <tr>
+                <td>[student.course.code]</td>
+                <td>[student.course.name]</td>
+                <td>[student.course.grade]</td>
+              </tr>
+              <tr>
+                <td>[student.course.code]</td>
+                <td>[student.course.name]</td>
+                <td>[student.course.grade]</td>
+              </tr>
+              <tr>
+                <td>[student.course.code]</td>
+                <td>[student.course.name]</td>
+                <td>[student.course.grade]</td>
+              </tr>
+            </table>
+
+            <div class ="card-text-header">
+              Letter
+            </div>
+
+            <table class ="card-text">[student.letter]</table>
+
+          </div>
+
+          <div class ="pane-controls">
+
+            <div class="button-compound hover">
+              <div class="button-compound-text">
+                ADD TO SHORTLIST
+              </div>
+            </div>
+
+            <div class="button-compound key hover">
+              <div class="button-compound-text">
+                VIEW PROJECTS
+              </div>
+            </div>
+
+          </div>
+
+        </div>     
+
+      </div>
+
+    </div>
+
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+
+</html>

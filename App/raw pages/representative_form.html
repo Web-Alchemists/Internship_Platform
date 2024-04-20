@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <div id = "navbar" class = "navbar">     
+
+    <div class = "nav-link-section">
+
+      <a class="nav-link" href = "landing_page.html" style="font-family: Adlanta;">
+        ALCHEMY INTERNSHIPS
+      </a>
+
+      <a class="nav-link" href = "landing_page.html">LANDING</a>
+      <a class="nav-link" href = "home.html">HOME</a>
+      <a class="nav-link" href = "view_page.html">VIEW</a>
+      <a class="nav-link" href = "form.html">FORM</a>
+
+      <!--
+      <a class="nav-link" href="index.html">
+
+        <img src ="profile_icon.svg" style="width:20px; height:20px;">
+
+        <div>
+          PROFILE
+        </div>
+      </a>
+      -->
+
+    </div>
+
+  </div>
+
+  <div class = "page-header">
+    <div>
+      REPRESENTATIVE FORM
+    </div>
+  </div>
+
+  <div class = "page-content">
+
+    <div class = "page-segment" style="width:100vw;">
+      
+      <div class="pane">
+
+        <div class ="pane-content">
+
+          <div class = "pane-header" style="align-items: center;">
+
+            <div class = "pane-header-text"> 
+
+              <div> REPRESENTATIVE INFORMATION </div>
+
+            </div>
+
+          </div>
+
+          <form id= "form" class ="form">
+
+            <!-- Bio Fields -->
+            <table class="form-table" style="width:98%;">
+
+              <tr>
+                <td>
+                  <div class ="card-text-header">
+                    BIO
+                  </div>
+                </td>
+              </tr>
+              
+              <!--- First Name Field --->
+              <tr class ="form-field">
+                <td>
+                  <label for="first-name-field" class ="form-field-item">
+                    First Name:
+                  </label>
+                </td>
+                <td>
+                  <input
+                    type = "text"
+                    id = "first-name-field"
+                    name = "first-name"
+                    value = ""
+                    class = "form-field-item"
+                    placeholder = "Name" 
+                    required
+                  />
+                </td>
+              </tr>
+
+              <!--- Last Name Field --->
+              <tr class ="form-field">
+                <td>
+                  <label for="last-name" class ="form-field-item">
+                    Last Name:
+                  </label>
+                </td>
+                <td>
+                  <input
+                    type = "text"
+                    id = "last-name-field"
+                    name = "last-name"
+                    value = ""
+                    class = "form-field-item"
+                    placeholder = "Name" 
+                    required
+                  />
+                </td>
+              </tr>
+              
+            </table>
+            
+            <!-- Contact Fields -->
+            <table class="form-table" style="width:98%;">
+
+              <tr>
+                <td>
+                  <div class ="card-text-header">
+                    CONTACT
+                  </div>
+                </td>
+              </tr>
+              
+              <!--- Email Field --->
+              <tr class ="form-field">
+                <td>
+                  <label for="email-field" class ="form-field-item">
+                    Email:
+                  </label>
+                </td>
+                <td>
+                  <input
+                    type = "email"
+                    id = "email-field"
+                    name = "email"
+                    value = ""
+                    class = "form-field-item"
+                    required
+                  />
+                </td>
+              </tr>
+
+              <!---  Contact Field --->
+              <tr class ="form-field">
+                <td>
+                  <label for="contact-field" class ="form-field-item">
+                    Contact:
+                  </label>
+                </td>
+                <td>
+                  <input 
+                    type = "tel"
+                    id = "contact-field"
+                    name = "contact"
+                    value = ""
+                    class = "form-field-item"
+                    pattern = "[0-9]{3}-[0-9]{4}"
+                    placeholder = "###-###" 
+                    required
+                  />
+                </td>
+              </tr>
+
+            </table>
+
+            <!-- Company Fields -->
+            <table class="form-table" style="width:98%;">
+
+              <tr>
+                <td>
+                  <div class ="card-text-header">
+                    COMPANY
+                  </div>
+                </td>
+              </tr>
+
+              <!--- Company Field --->
+              <tr class ="form-field">
+
+                <td>
+                  <label for="company-field" class ="form-field-item">
+                    Your Company:
+                  </label>
+                </td>
+                <td>
+
+                  <select id="company-field" name="company" class="form-field-item" required>
+                    
+                    <option value="" disabled selected>[select]</option>
+                    <option value="Company1" class="select">Company1</option>
+                    <option value="Company2" class="select">Company2</option>
+                    <option value="Company3" class="select">Company3</option>
+                    <option value="Company4" class="select">Company4</option>
+                    <option value="Company5" class="select">Company5</option>
+
+                  </select>
+
+                </td>
+              </tr>
+            </table>
+
+          </form>
+
+          <div class = "pane-controls">
+
+            <button class="button-compound key hover" type="submit" form="form">
+              <div class="button-compound-text">
+                CONFIRM
+              </div>
+            </button>
+
+          </div>
+          
+        </div>
+      
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  
+  <script src="script.js"></script>
+</body>
+
+</html>

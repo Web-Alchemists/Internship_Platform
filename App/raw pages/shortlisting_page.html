@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <div id = "navbar" class = "navbar">     
+
+    <div class = "nav-link-section">
+
+      <a class="nav-link" href = "landing_page.html" style="font-family: Adlanta;">
+        ALCHEMY INTERNSHIPS
+      </a>
+      
+      <a class="nav-link" href = "home_page.html">HOME</a>
+      <a class="nav-link" href = "view_students_page.html">STUDENTS</a>
+      <a class="nav-link" href = "view_reps_page.html">REPS</a>
+      <a class="nav-link" href = "view_projects_page.html">PROJECTS</a>
+      <a class="nav-link" href = "view_companies_page.html">COMPANIES</a>
+      <a class="nav-link active" href = "shortlisting_page.html">SHORTLISTING</a>
+      <a class="nav-link" href = "student_form.html">EDIT INFO</a>
+      <a class="nav-link" href = "landing_page.html">LOG OUT</a>
+
+      <!--
+      <a class="nav-link" href="index.html">
+
+        <img src ="profile_icon.svg" style="width:20px; height:20px;">
+
+        <div>
+          PROFILE
+        </div>
+      </a>
+      -->
+
+    </div>
+
+  </div>
+
+  <div id="filter-pane-overlay">
+    <div class ="filter-pane">
+      <div class = "filter-menu">
+        
+        <div class ="pane-header">
+
+          <div class ="pane-header-text">
+            FILTERS
+          </div>
+
+          <div class = "pane-header-button">
+
+            <div class="button-compound" id="filter-button onclick=" onclick="closeFilterMenu()">
+
+              <img src ="close.svg" class="button-image">
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <form id= "form" class ="form">
+              
+            <table style="width:98%;">
+              
+              <tr class ="form-field">
+                <td>
+                  <label for="text_filter" class ="form-field-item">
+                    Text:
+                  </label>
+                </td>
+                <td>
+                  <input type="text" id="text_filter" name="text_filter" class ="form-field-item" placeholder="Text">
+                </td>
+              </tr>
+
+              <tr class ="form-field">
+                
+                  <td>
+                    <div class ="form-field-item">
+                      Checkbox:
+                    </div>
+                  </td>
+                    
+                  <td>
+                    <label class="container">
+                      
+                      <input type="checkbox" id="check_filter" name="check_filter" value="ckeck_filter" class ="form-field-item checkbox-hide">
+
+                      <span class="checkmark"></span>
+                      
+                    </label>
+                  </td>
+         
+              </tr>
+
+              <tr class ="form-field">
+
+                  <td>
+                    <div class ="form-field-item">
+                      Checkbox:
+                    </div>
+                  </td>
+
+                  <td>
+                    <label class="container">
+
+                      <input type="checkbox" id="check_filter" name="check_filter" class ="form-field-item checkbox-hide">
+
+                      <span class="checkmark"></span>
+
+                    </label>
+                  </td>
+
+              </tr>
+
+              <tr class ="form-field">
+
+                  <td>
+                    <div class ="form-field-item">
+                      Checkbox:
+                    </div>
+                  </td>
+
+                  <td>
+                    <label class="container">
+
+                      <input type="checkbox" id="check_filter" name="check_filter" class ="form-field-item checkbox-hide">
+
+                      <span class="checkmark"></span>
+
+                    </label>
+                  </td>
+
+              </tr>
+
+              <tr class ="form-field">
+                <td>
+                  <label for="list_filter" class ="form-field-item">
+                    Selection List:
+                  </label>
+                </td>
+                <td>
+
+                  <select id="list_filter" class="form-field-item">
+
+                    <option value="Option 1" class="select">None</option>
+                    <option value="Option 1" class="select">Option 1</option>
+                    <option value="Option 2" class="select">Option 2</option>
+                    <option value="Option 3" class="select">Option 3</option>
+                    <option value="Option 4" class="select">Option 4</option>
+                    <option value="Option 1" class="select">Option 5</option>
+                    
+                  </select>
+                  
+                </td>
+              </tr>
+              
+            </table>
+          
+        </form>
+
+        <div class ="pane-controls">
+
+          <button class="button-compound key hover" type="submit" form="form" onclick="closeFilterMenu()">
+            <div class="button-compound-text">
+              APPLY
+            </div>
+          </button>
+
+          <div class="button-compound key hover">
+            <div class="button-compound-text">
+              CLEAR
+            </div>
+          </div>
+
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+
+  <div class = "page-header">
+    <div>
+      Shortlisting Page
+    </div>
+  </div>
+  
+  <div class = "page-content">
+
+    <div class = "page-segment" style="width:20%;">
+
+      <div class="pane">
+
+        <div class = "pane-content">
+
+          <div class = "pane-header">
+
+            <div class = "pane-header-text"> 
+
+              <div> PROJECTS </div>
+
+            </div>
+
+            <div class = "pane-header-button"> 
+
+              <div class="button-compound" id="filter-button" onclick="openFilterMenu()">
+
+                <img src ="filter_icon.svg" class="button-image">
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class = "pane-data">
+
+            <div class ="list-item">
+              <a class = "list-item-link">[project.company.name - project.name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[project.company.name - project.name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[project.company.name - project.name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[project.company.name - project.name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[project.company.name - project.name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[project.company.name - project.name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[project.company.name - project.name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[project.company.name - project.name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[project.company.name - project.name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[project.company.name - project.name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[project.company.name - project.name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[project.company.name - project.name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[project.company.name - project.name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[project.company.name - project.name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[project.company.name - project.name]</a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class = "page-segment" id = "project-pane" style="width:60%;"">
+
+      <div class="pane">
+
+        <div class ="pane-content">
+
+          <div class = "pane-tab">
+            
+            <div id="project-tab" class = "pane-header tab selected" onclick="switchTabs('project-tab')">
+
+              <div class = "pane-header-text tab"> 
+
+                <div> PROJECT INFORMATION </div>
+
+              </div>
+
+              <div class = "pane-header-button"> 
+
+                <a class="button-compound" id="new-tabe-button">
+
+                  <img src ="new_tab.svg" class="button-image">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div id="student-tab" class = "pane-header tab" onclick="switchTabs('student-tab')">
+
+              <div class = "pane-header-text tab"> 
+
+                <div> STUDENT INFORMATION </div>
+
+              </div>
+
+            </div>
+            
+          </div>
+
+          <div class = "pane-data">
+
+            <div class ="card-text-header center">
+              [project.name]
+            </div>
+
+            <div class ="card-text-header">
+              Meta Info
+            </div>
+
+            <table class ="card-text-column">
+              <tr>
+                <td>Database ID:</td>
+                <td>[project.id]</td>
+              </tr>
+              <tr>
+                <td>Submitted by:</td>
+                <td>[project.representative_id]</td>
+              </tr>
+            </table>
+
+            <div class ="card-text-header">
+              General Info
+            </div>
+
+            <table class ="card-text-column">
+              <tr>
+                <td>Company:</td>
+                <td>[project.company.name]</td>
+              </tr>
+              <tr>
+                <td>Project Title:</td>
+                <td>[project.name]</td>
+              </tr>
+            </table>
+
+            <div class ="card-text-header">
+              Shortlist
+            </div>
+
+            <table class ="card-text-column">
+              <tr>
+                <td>Status:</td>
+                <td>[FULL or WAITING]</td>
+              </tr>
+              <tr>
+                <td>Capacity:</td>
+                <td>[project.capcity]</td>
+              </tr>
+              <tr>
+                <td>List Size:</td>
+                <td>[project.shortlist_size]</td>
+              </tr>
+              <tr>
+                <td>Remaining:</td>
+                <td>[project.capacity - project.shortlist_size]</td>
+              </tr>
+            </table>
+
+            <div class ="card-text-header">
+              Description
+            </div>
+
+            <div class ="card-text">[project.description]</div>
+
+            <div class ="card-text-header">
+              Details
+            </div>
+
+            <table class ="card-text-column">
+
+              <tr>
+                <td>Format:</td>
+                <td>[project.format]</td>
+              </tr>
+              <tr>
+                <td>Duration:</td>
+                <td>[project.duration]</td>
+              </tr>
+            </table>
+
+            <div class ="card-text-header center">
+              REQUIREMENTS
+            </div>
+
+            <div class ="card-text-header">
+              Summary
+            </div>
+
+            <div class ="card-text">[project.requirement.summary]</div>
+
+            <div class ="card-text-header">
+              Disciplines
+            </div>
+
+            <table class ="card-text-column">
+              <tr>
+                <td>[project.requirement.discipline.area.icon]</td>
+                <td>[project.requirement..discipline.name]</td>
+              </tr>
+              <tr>
+                <td>[project.requirement.discipline.area.icon]</td>
+                <td>[project.requirement.discipline.name]</td>
+              </tr>
+              <tr>
+                <td>[project.requirement.discipline.area.icon]</td>
+                <td>[project.requirement.discipline.name]</td>
+              </tr>
+              <tr>
+                <td>[project.requirement.discipline.area.icon]</td>
+                <td>[project.requirement.discipline.name]</td>
+              </tr>
+            </table>
+
+            <div class ="card-text-header">
+              Other
+            </div>
+
+            <table class ="card-text-column">
+              <tr>
+                <td>Year</td>
+                <td>[project.requirement.year]</td>
+              </tr>
+              <tr>
+                <td>Residence</td>
+                <td>[project.requirement.residence]</td>
+              </tr>
+            </table>
+
+          </div>
+
+          <div class ="pane-controls">
+
+            <div class="button-compound hover key">
+
+              <img src ="checkmark_white.svg" class="button-compound-image">
+
+              <div class="button-compound-text">
+
+                MATCH
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class = "page-segment" id = "student-pane" style="width:60%; display:none;"">
+
+      <div class= "pane">
+
+        <div class = "pane-content">
+
+          <div class = "pane-tab">
+
+            <div id="project-tab" class = "pane-header tab" onclick="switchTabs('project-tab')">
+
+              <div class = "pane-header-text tab"> 
+
+                <div> PROJECT INFORMATION </div>
+
+              </div>
+
+            </div>
+
+            <div id="student-tab" class = "pane-header tab selected" onclick="switchTabs('student-tab')">
+
+              <div class = "pane-header-text tab"> 
+
+                <div> STUDENT INFORMATION </div>
+
+              </div>
+
+              <div class = "pane-header-button"> 
+
+                <a class="button-compound" id="new-tabe-button">
+
+                  <img src ="new_tab.svg" class="button-image">
+
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class = "pane-data">
+
+            <div class ="card-text-header center">
+              [student.first_name student.last_name]
+            </div>
+
+            <div class ="card-text-header">
+              Meta Info
+            </div>
+
+            <table class ="card-text-column">
+              <tr>
+                <td>Database ID:</td>
+                <td>[student.id]</td>
+              </tr>
+            </table>
+
+            <div class ="card-text-header">
+              Bio
+            </div>
+
+            <table class ="card-text-column">
+              <tr>
+                <td>First Name:</td>
+                <td>[student.first_name]</td>
+              </tr>
+
+              <tr>
+                <td>Last Name:</td>
+                <td>[student.last_name]</td>
+              </tr>
+              <tr>
+                <td>Country of Residence:</td>
+                <td>[student.residence]</td>
+              </tr>
+            </table>
+
+            <div class ="card-text-header">
+              Contact
+            </div>
+
+            <table class ="card-text-column">
+              <tr>
+                <td>Contact #:</td>
+                <td>[student.contact]</td>
+              </tr>
+              <tr>
+                <td>Email:</td>
+                <td>[student.email]</td>
+              </tr>
+            </table>
+
+            <div class ="card-text-header">
+              Transcript
+            </div>
+
+            <table class ="card-text-column">
+
+              <tr>
+                <td>Student ID:</td>
+                <td>[student.student_id]</td>
+              </tr>
+              <tr>
+                <td>Year:</td>
+                <td>[student.year]</td>
+              </tr>
+              <tr>
+                <td>Major:</td>
+                <td>[student.major]</td>
+              </tr>
+              <tr>
+                <td>Major2:</td>
+                <td>[student.major2]</td>
+              </tr>
+              <tr>
+                <td>Minor:</td>
+                <td>[student.minor]</td>
+              </tr>
+              <tr>
+                <td>Minor2:</td>
+                <td>[student.minor2]</td>
+              </tr>
+              <tr>
+                <td>GPA:</td>
+                <td>[student.gpa]</td>
+              </tr>
+            </table>
+
+            <div class ="card-text-header">
+              Courses
+            </div>
+
+            <table class ="card-text-column">
+              <tr>
+                <th>CODE</td>
+                <th>NAME</td>
+                <th>GRADE</td>
+              </tr>
+              <tr>
+                <td>[student.course.code]</td>
+                <td>[student.course.name]</td>
+                <td>[student.course.grade]</td>
+              </tr>
+              <tr>
+                <td>[student.course.code]</td>
+                <td>[student.course.name]</td>
+                <td>[student.course.grade]</td>
+              </tr>
+              <tr>
+                <td>[student.course.code]</td>
+                <td>[student.course.name]</td>
+                <td>[student.course.grade]</td>
+              </tr>
+              <tr>
+                <td>[student.course.code]</td>
+                <td>[student.course.name]</td>
+                <td>[student.course.grade]</td>
+              </tr>
+            </table>
+
+            <div class ="card-text-header">
+              Letter
+            </div>
+
+            <table class ="card-text">[student.letter]</table>
+
+          </div>
+
+          <div class ="pane-controls">
+
+            <div class="button-compound hover key">
+
+              <img src ="checkmark_white.svg" class="button-compound-image">
+              
+              <div class="button-compound-text">
+                
+                MATCH
+                
+              </div>
+              
+            </div>
+
+          </div>
+
+        </div>     
+
+      </div>
+
+    </div>
+
+    <div class = "page-segment" style="width:20%;">
+
+      <div class="pane">
+
+        <div class = "pane-content">
+
+          <div class = "pane-header">
+
+            <div class = "pane-header-text"> 
+
+              <div> STUDENTS </div>
+
+            </div>
+
+            <div class = "pane-header-button"> 
+
+              <div class="button-compound" id="filter-button" onclick="openFilterMenu()">
+
+                <img src ="filter_icon.svg" class="button-image">
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class = "pane-data">
+
+            <div class ="list-item">
+              <a class = "list-item-link">[student.first_name student.last_name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[student.first_name student.last_name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[student.first_name student.last_name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[student.first_name student.last_name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[student.first_name student.last_name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[student.first_name student.last_name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[student.first_name student.last_name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[student.first_name student.last_name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[student.first_name student.last_name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[student.first_name student.last_name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[student.first_name student.last_name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[student.first_name student.last_name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[student.first_name student.last_name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[student.first_name student.last_name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[student.first_name student.last_name]</a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    
+
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+
+</html>

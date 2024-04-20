@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <div id = "navbar" class = "navbar">     
+
+    <div class = "nav-link-section">
+
+      <a class="nav-link" href = "landing_page.html" style="font-family: Adlanta;">
+        ALCHEMY INTERNSHIPS
+      </a>
+
+      <a class="nav-link" href = "home.html">HOME</a>
+      <a class="nav-link" href = "view_students_page.html">STUDENTS</a>
+      <a class="nav-link" href = "view_projects_page.html">PROJECTS</a>
+      <a class="nav-link" href = "view_reps_page.html">REPS</a>
+      <a class="nav-link" href = "view_companies_page.html">COMPANIES</a>
+      <a class="nav-link" href = "matchmaking_page.html">MATCH</a>
+
+      <!--
+      <a class="nav-link" href="index.html">
+
+        <img src ="profile_icon.svg" style="width:20px; height:20px;">
+
+        <div>
+          PROFILE
+        </div>
+      </a>
+      -->
+
+    </div>
+
+  </div>
+
+  <div class = "page-header">
+    <div>
+      VIEW STUDENT
+    </div>
+  </div>
+  
+  <div class = "page-content">
+
+    <div class = "page-segment" style="width:100%;"">
+
+      <div class= "pane">
+
+        <div class = "pane-content">
+
+          <div class = "pane-header">
+
+            <div class = "pane-header-text"> 
+
+              <div> STUDENT INFORMATION </div>
+
+            </div>
+
+          </div>
+          
+          <div class = "pane-data">
+
+            <div class ="card-text-header center">
+              [student.first_name student.last_name]
+            </div>
+
+            <div class ="card-text-header">
+              Meta Info
+            </div>
+
+            <table class ="card-text-column">
+              <tr>
+                <td>Database ID:</td>
+                <td>[student.id]</td>
+              </tr>
+            </table>
+
+            <div class ="card-text-header">
+              Bio
+            </div>
+
+            <table class ="card-text-column">
+              <tr>
+                <td>First Name:</td>
+                <td>[student.first_name]</td>
+              </tr>
+
+              <tr>
+                <td>Last Name:</td>
+                <td>[student.last_name]</td>
+              </tr>
+              <tr>
+                <td>Country of Residence:</td>
+                <td>[student.residence]</td>
+              </tr>
+            </table>
+
+            <div class ="card-text-header">
+              Contact
+            </div>
+
+            <table class ="card-text-column">
+              <tr>
+                <td>Contact #:</td>
+                <td>[student.contact]</td>
+              </tr>
+              <tr>
+                <td>Email:</td>
+                <td>[student.email]</td>
+              </tr>
+            </table>
+
+            <div class ="card-text-header">
+              Transcript
+            </div>
+
+            <table class ="card-text-column">
+
+              <tr>
+                <td>Student ID:</td>
+                <td>[student.student_id]</td>
+              </tr>
+              <tr>
+                <td>Year:</td>
+                <td>[student.year]</td>
+              </tr>
+              <tr>
+                <td>Major:</td>
+                <td>[student.major]</td>
+              </tr>
+              <tr>
+                <td>Major2:</td>
+                <td>[student.major2]</td>
+              </tr>
+              <tr>
+                <td>Minor:</td>
+                <td>[student.minor]</td>
+              </tr>
+              <tr>
+                <td>Minor2:</td>
+                <td>[student.minor2]</td>
+              </tr>
+              <tr>
+                <td>GPA:</td>
+                <td>[student.gpa]</td>
+              </tr>
+            </table>
+
+            <div class ="card-text-header">
+              Courses
+            </div>
+
+            <table class ="card-text-column">
+              <tr>
+                <th>CODE</td>
+                <th>NAME</td>
+                <th>GRADE</td>
+              </tr>
+              <tr>
+                <td>[student.course.code]</td>
+                <td>[student.course.name]</td>
+                <td>[student.course.grade]</td>
+              </tr>
+              <tr>
+                <td>[student.course.code]</td>
+                <td>[student.course.name]</td>
+                <td>[student.course.grade]</td>
+              </tr>
+              <tr>
+                <td>[student.course.code]</td>
+                <td>[student.course.name]</td>
+                <td>[student.course.grade]</td>
+              </tr>
+              <tr>
+                <td>[student.course.code]</td>
+                <td>[student.course.name]</td>
+                <td>[student.course.grade]</td>
+              </tr>
+            </table>
+
+            <div class ="card-text-header">
+              Letter
+            </div>
+
+            <table class ="card-text">[student.letter]</table>
+
+          </div>
+
+          <div class ="pane-controls">
+
+            <div class="button-compound hover">
+              <div class="button-compound-text">
+                ADD TO SHORTLIST
+              </div>
+            </div>
+
+            <div class="button-compound key hover">
+              <div class="button-compound-text">
+                VIEW PROJECTS
+              </div>
+            </div>
+
+          </div>
+
+        </div>     
+
+      </div>
+
+    </div>
+
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -12,6 +12,26 @@ from App.controllers import (
 
 user_views = Blueprint('user_views', __name__, template_folder='../templates')
 
+# ------------ Template Testing ------------ #
+
+@user_views.route('/signuptype', methods=['GET'])
+def get_signup_type():
+    return render_template('signup_select.html')
+
+@user_views.route('/signup/student', methods=['GET'])
+def signup_student():
+    return render_template('signup.html')
+
+@user_views.route('/signup/rep', methods=['GET'])
+def render_signup_page():
+    return render_template('signup.html')
+
+@user_views.route('/login', methods=['GET'])
+def render_login_page():
+    return render_template('login.html')
+
+# ----------------------------------------- #
+
 @user_views.route('/users', methods=['GET'])
 def get_user_page():
     users = get_all_users()

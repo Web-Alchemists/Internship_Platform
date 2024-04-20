@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <div id = "navbar" class = "navbar">     
+
+    <div class = "nav-link-section">
+
+      <a class="nav-link" href = "landing_page.html" style="font-family: Adlanta;">
+        ALCHEMY INTERNSHIPS
+      </a>
+
+      <a class="nav-link" href = "landing_page.html">LANDING</a>
+      <a class="nav-link" href = "home.html">HOME</a>
+      <a class="nav-link" href = "view_page.html">VIEW</a>
+      <a class="nav-link" href = "form.html">FORM</a>
+
+      <!--
+      <a class="nav-link" href="index.html">
+
+        <img src ="profile_icon.svg" style="width:20px; height:20px;">
+
+        <div>
+          PROFILE
+        </div>
+      </a>
+      -->
+
+    </div>
+
+  </div>
+
+  <div class = "page-header">
+    <div>
+      STUDENT APPLICATION FORM
+    </div>
+  </div>
+
+  <div class = "page-content">
+
+    <div class = "page-segment" style="width:100vw;">
+      
+      <div class="pane">
+
+        <div class ="pane-content">
+
+          <div class = "pane-header" style="align-items: center;">
+
+            <div class = "pane-header-text"> 
+
+              <div> STUDENT INFORMATION </div>
+
+            </div>
+
+          </div>
+
+          <form id= "form" class ="form">
+
+            <!-- Bio Fields -->
+            <table class="form-table" style="width:98%;">
+
+              <tr>
+                <td>
+                  <div class ="card-text-header">
+                    BIO
+                  </div>
+                </td>
+              </tr>
+              
+              <!--- First Name Field --->
+              <tr class ="form-field">
+                <td>
+                  <label for="first-name-field" class ="form-field-item">
+                    First Name:
+                  </label>
+                </td>
+                <td>
+                  <input
+                    type = "text"
+                    id = "first-name-field"
+                    name = "first-name"
+                    value = ""
+                    class = "form-field-item"
+                    placeholder = "Name" 
+                    required
+                  />
+                </td>
+              </tr>
+
+              <!--- Last Name Field --->
+              <tr class ="form-field">
+                <td>
+                  <label for="last-name" class ="form-field-item">
+                    Last Name:
+                  </label>
+                </td>
+                <td>
+                  <input
+                    type = "text"
+                    id = "last-name-field"
+                    name = "last-name"
+                    value = ""
+                    class = "form-field-item"
+                    placeholder = "Name" 
+                    required
+                  />
+                </td>
+              </tr>
+
+              <!--- Residence Field --->
+              <tr class ="form-field">
+                <td>
+                  <label for="residence-field" class ="form-field-item">
+                    Residence:
+                  </label>
+                </td>
+                <td>
+
+                  <select id="residence-field" name="residence" class="form-field-item" required>
+                    <option value="" disabled selected>[select]</option>
+                    <option value="Option 1" class="select">Option 1</option>
+                    <option value="Option 2" class="select">Option 2</option>
+                    <option value="Option 3" class="select">Option 3</option>
+                    <option value="Option 4" class="select">Option 4</option>
+                    <option value="Option 5" class="select">Option 5</option>
+
+                  </select>
+
+                </td>
+              </tr>
+
+            </table>
+
+            <!-- Contact Fields -->
+            <table class="form-table" style="width:98%;">
+
+              <tr>
+                <td>
+                  <div class ="card-text-header">
+                    CONTACT
+                  </div>
+                </td>
+              </tr>
+              
+              <!--- Email Field --->
+              <tr class ="form-field">
+                <td>
+                  <label for="email-field" class ="form-field-item">
+                    Email:
+                  </label>
+                </td>
+                <td>
+                  <input
+                    type = "email"
+                    id = "email-field"
+                    name = "email"
+                    value = ""
+                    class = "form-field-item"
+                    required
+                  />
+                </td>
+              </tr>
+
+              <!---  Contact Field --->
+              <tr class ="form-field">
+                <td>
+                  <label for="contact-field" class ="form-field-item">
+                    Contact:
+                  </label>
+                </td>
+                <td>
+                  <input 
+                    type = "tel"
+                    id = "contact-field"
+                    name = "contact"
+                    value = ""
+                    class = "form-field-item"
+                    pattern = "[0-9]{3}-[0-9]{4}"
+                    placeholder = "###-###" 
+                    required
+                  />
+                </td>
+              </tr>
+
+            </table>
+
+            <!-- Transcript Fields -->
+            <table class="form-table" style="width:98%;">
+
+              <tr>
+                <td>
+                  <div class ="card-text-header">
+                    TRANSCRIPT
+                  </div>
+                </td>
+              </tr>
+
+              <!--- Student ID Field --->
+              <tr class ="form-field">
+                <td>
+                  <label for="student-id-field" class ="form-field-item">
+                    Student ID:
+                  </label>
+                </td>
+                <td>
+                  <input
+                    type = "text"
+                    id = "student-id-field"
+                    name = "student-id"
+                    value = ""
+                    class = "form-field-item"
+                    required
+                  />
+                </td>
+              </tr>
+
+              <!--- Year Field --->
+              <tr class ="form-field">
+
+                <td>
+                  <label for="year-field" class ="form-field-item">
+                    Year:
+                  </label>
+                </td>
+                <td>
+
+                  <select id="year-field" name="year" class="form-field-item" required>
+                    <option value="" disabled selected>[select]</option>
+                    <option value="1" class="select">1</option>
+                    <option value="2" class="select">2</option>
+                    <option value="3" class="select">3</option>
+                    <option value="4" class="select">4</option>
+                    <option value="5" class="select">5</option>
+
+                  </select>
+
+                </td>
+              </tr>
+
+              <!--- Major Field --->
+              <tr class ="form-field">
+
+                <td>
+                  <label for="major-field" class ="form-field-item">
+                    Major:
+                  </label>
+                </td>
+                <td>
+
+                  <select id="major-field" name="major" class="form-field-item" required>
+                    <option value="" disabled selected>[select]</option>
+                    <option value="Programme1" class="select">Programme1</option>
+                    <option value="Programme2" class="select">Programme2</option>
+                    <option value="Programme3" class="select">Programme3</option>
+                    <option value="Programme4" class="select">Programme4</option>
+                    <option value="Programme5" class="select">Programme5</option>
+
+                  </select>
+
+                </td>
+              </tr>
+
+              <!--- Major2 Field --->
+              <tr class ="form-field">
+
+                <td>
+                  <label for="major2-field" class ="form-field-item">
+                    Major2:
+                  </label>
+                </td>
+                <td>
+
+                  <select id="major2-field" name="major2" class="form-field-item">
+                    <option value="" disabled selected>[select]</option>
+                    <option value="Programme1" class="select">Programme1</option>
+                    <option value="Programme2" class="select">Programme2</option>
+                    <option value="Programme3" class="select">Programme3</option>
+                    <option value="Programme4" class="select">Programme4</option>
+                    <option value="Programme5" class="select">Programme5</option>
+
+                  </select>
+
+                </td>
+              </tr>
+
+              <!--- Minor Field --->
+              <tr class ="form-field">
+
+                <td>
+                  <label for="minor-field" class ="form-field-item">
+                    Minor:
+                  </label>
+                </td>
+                <td>
+
+                  <select id="minor-field" name="minor" class="form-field-item">
+                    <option value="" disabled selected>[select]</option>
+                    <option value="Programme1" class="select">Programme1</option>
+                    <option value="Programme2" class="select">Programme2</option>
+                    <option value="Programme3" class="select">Programme3</option>
+                    <option value="Programme4" class="select">Programme4</option>
+                    <option value="Programme5" class="select">Programme5</option>
+
+                  </select>
+
+                </td>
+              </tr>
+
+              <!--- Minor2 Field --->
+              <tr class ="form-field">
+
+                <td>
+                  <label for="minor2-field" class ="form-field-item">
+                    Minor2:
+                  </label>
+                </td>
+                <td>
+
+                  <select id="minor2-field" name="minor2" class="form-field-item">
+                    <option value="" disabled selected>[select]</option>
+                    <option value="Programme1" class="select">Programme1</option>
+                    <option value="Programme2" class="select">Programme2</option>
+                    <option value="Programme3" class="select">Programme3</option>
+                    <option value="Programme4" class="select">Programme4</option>
+                    <option value="Programme5" class="select">Programme5</option>
+
+                  </select>
+
+                </td>
+              </tr>
+
+              <!--- Courses Field --->
+              <tr class="form-field-dynamic">
+
+                <td style="vertical-align: top;">
+                  <div class ="card-text">
+                    COURSES PASSED
+                  </div>
+                </td>
+
+                <td id ="course-field">
+                  
+                  <div class ="button-compound" id= "add-course-button" style="width:10vw;">
+                    
+                    <div class = "pane-header-button"> 
+
+                      <div class="button-compound contrast" id="filter-button" onclick="addCourse()">
+
+                        <img src ="add_black.svg" class="button-compound-image">
+                        <div class="button-compound-text">
+                          ADD
+                        </div>
+
+                      </div>
+
+                    </div>
+                    
+                  </div>
+                  
+                </td>
+                
+                <!-- <td class ="form-field">
+
+                  <label for="list_filter" class ="form-field-item">
+                    Course:
+                  </label>
+                  
+                  <select id="minor2" name="minor2" class="form-field-item" required>
+                    
+                    <option value="" disabled selected>[select]</option>
+                    <option value="Course1" class="select">Course1</option>
+                    <option value="Course2" class="select">Course2</option>
+                    <option value="Course3" class="select">Course3</option>
+                    <option value="Course4" class="select">Course4</option>
+                    <option value="Course5" class="select">Course5</option>
+  
+                  </select>
+                  
+                </td> -->
+              
+              </tr>
+
+              <!--- GPA Field --->
+              <tr class ="form-field">
+                <td>
+                  <label for="gpa-field" class ="form-field-item">
+                    Current GPA:
+                  </label>
+                </td>
+                <td>
+                  <input
+                    type = "number"
+                    id = "gpa"
+                    name = "gpa"
+                    class = "form-field-item"
+                    value = "0"
+                    min = "0"
+                    max = "4"
+                    step = "0.01"
+                  />
+                </td>
+              </tr>
+
+            </table>
+
+            <!-- Letter Field -->
+            <table class="form-table" style="width:98%;">
+
+              <tr>
+                <td>
+                  <div class ="card-text-header">
+                    LETTER OF INTEREST
+                  </div>
+                </td>
+              </tr>
+
+              <!--- Letter Field --->
+              <tr class ="form-field">
+                <td>
+
+                  <textarea
+                    id = "letter-field"
+                    name = "letter"
+                    class = "formfield-item"
+                    value = ""
+                    placeholder = "Explain why you are interested in the internship programme"
+                    rows = "20"
+                    cols = "100"
+                    required
+                  ></textarea>
+
+                </td>
+              </tr>
+
+            </table>
+
+          </form>
+
+          <div class = "pane-controls">
+
+            <button class="button-compound key hover" type="submit" form="form">
+
+              <img src ="checkmark_white.svg" class="button-compound-image">
+              
+              <div class="button-compound-text">
+                CONFIRM
+              </div>
+              
+            </button>
+            
+          </div>
+          
+        </div>
+      
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  
+  <script src="script.js"></script>
+</body>
+
+</html>

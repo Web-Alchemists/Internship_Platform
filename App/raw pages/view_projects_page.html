@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <div id = "navbar" class = "navbar">     
+
+    <div class = "nav-link-section">
+
+      <a class="nav-link" href = "landing_page.html" style="font-family: Adlanta;">
+        ALCHEMY INTERNSHIPS
+      </a>
+
+      <a class="nav-link" href = "home.html">HOME</a>
+      <a class="nav-link" href = "view_students_page.html">STUDENTS</a>
+      <a class="nav-link" href = "view_projects_page.html">PROJECTS</a>
+      <a class="nav-link" href = "view_reps_page.html">REPS</a>
+      <a class="nav-link" href = "view_companies_page.html">COMPANIES</a>
+      <a class="nav-link" href = "matchmaking_page.html">MATCH</a>
+
+      <!--
+      <a class="nav-link" href="index.html">
+
+        <img src ="profile_icon.svg" style="width:20px; height:20px;">
+
+        <div>
+          PROFILE
+        </div>
+      </a>
+      -->
+
+    </div>
+
+  </div>
+
+  <div id="filter-pane-overlay">
+    <div class ="filter-pane">
+      <div class = "filter-menu">
+        
+        <div class ="pane-header">
+
+          <div class ="pane-header-text">
+            FILTERS
+          </div>
+
+          <div class = "pane-header-button">
+
+            <div class="button-compound" id="filter-button onclick=" onclick="closeFilterMenu()">
+
+              <img src ="close.svg" class="button-image">
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <form id= "form" class ="form">
+              
+            <table style="width:98%;">
+
+              <tr class ="form-field">
+                <td>
+                  <label for="shortlist_filter" class ="form-field-item">
+                    Shortlist Status:
+                  </label>
+                </td>
+                <td>
+
+                  <select id="shortlist_filter" name="shortlist_filter" class="form-field-item">
+
+                    <option value="" class="select">All</option>
+                    <option value="waiting" class="select">Waiting</option>
+                    <option value="full" class="select">Full</option>
+
+                  </select>
+
+                </td>
+              </tr>
+              
+              <tr class ="form-field">
+                <td>
+                  <label for="company_filter" class ="form-field-item">
+                    Company:
+                  </label>
+                </td>
+                <td>
+
+                  <select id="company_filter" name="company_filter" class="form-field-item">
+
+                    <option value="" class="select">All</option>
+                    <option value="[company.name]" class="select">[company.name]</option>
+                    <option value="[company.name]" class="select">[company.name]</option>
+                    <option value="[company.name]" class="select">[company.name]</option>
+                    <option value="[company.name]" class="select">[company.name]</option>
+                    <option value="[company.name]" class="select">[company.name]</option>
+
+                  </select>
+
+                </td>
+              </tr>
+
+              <tr class ="form-field">
+                <td>
+                  <label for="format_filter" class ="form-field-item">
+                    Format:
+                  </label>
+                </td>
+                <td>
+
+                  <select id="format_filter" name="format_filter" class="form-field-item">
+
+                    <option value="" class="select">All</option>
+                    <option value="physical" class="select">Physical</option>
+                    <option value="online" class="select">Online</option>
+                    <option value="hybrid" class="select">Hybird</option>
+
+                  </select>
+
+                </td>
+              </tr>
+
+              <tr class ="form-field">
+                <td>
+                  <label for="area_filter" class ="form-field-item">
+                    Area:
+                  </label>
+                </td>
+                <td>
+
+                  <select id="area_filter" name="area_filter" class="form-field-item">
+
+                    <option value="" class="select">All</option>
+                    <option value="[area.name]" class="select">[area.name]</option>
+                    <option value="[area.name]" class="select">[area.name]</option>
+                    <option value="[area.name]" class="select">[area.name]</option>
+                    <option value="[area.name]" class="select">[area.name]</option>
+                    <option value="[area.name]" class="select">[area.name]</option>
+
+                  </select>
+
+                </td>
+              </tr>
+
+              <tr class ="form-field">
+                <td>
+                  <label for="discipline_filter" class ="form-field-item">
+                    Discipline:
+                  </label>
+                </td>
+                <td>
+
+                  <select id="discipline_filter" name="discipline_filter" class="form-field-item">
+
+                    <option value="" class="select">All</option>
+                    <option value="[discipline.name]" class="select">[discipline.name]</option>
+                    <option value="[discipline.name]" class="select">[discipline.name]</option>
+                    <option value="[discipline.name]" class="select">[discipline.name]</option>
+                    <option value="[discipline.name]" class="select">[discipline.name]</option>
+                    <option value="[discipline.name]" class="select">[discipline.name]</option>
+                    
+                  </select>
+                  
+                </td>
+              </tr>
+
+              <tr class ="form-field">
+                <td>
+                  <label for="year_requirement_filter" class ="form-field-item">
+                    Year Requirement:
+                  </label>
+                </td>
+                <td>
+
+                  <select id="year_requirement_filter" name="year_requirement_filter" class="form-field-item">
+
+                    <option value="" class="select">All</option>
+                    <option value="1" class="select">1</option>
+                    <option value="2" class="select">2</option>
+                    <option value="3" class="select">3</option>
+                    <option value="4" class="select">4</option>
+                    <option value="5" class="select">5</option>
+
+                  </select>
+
+                </td>
+              </tr>
+
+              <tr class ="form-field">
+                <td>
+                  <label for="course_filter" class ="form-field-item">
+                    Residence Requirement:
+                  </label>
+                </td>
+                <td>
+
+                  <select id="course_filter" name="course_filter" class="form-field-item">
+
+                    <option value="" class="select">All</option>
+                    <option value="[country.name]" class="select">[country.name]</option>
+                    <option value="[country.name]" class="select">[country.name]</option>
+                    <option value="[country.name]" class="select">[country.name]</option>
+                    <option value="[country.name]" class="select">[country.name]</option>
+                    <option value="[country.name]" class="select">[country.name]</option>
+
+                  </select>
+
+                </td>
+              </tr>
+              
+            </table>
+          
+        </form>
+
+        <div class ="pane-controls">
+
+          <button class="button-compound key hover" type="submit" form="form" onclick="closeFilterMenu()">
+            <div class="button-compound-text">
+              APPLY
+            </div>
+          </button>
+
+          <button class="button-compound key hover" type="reset" form="form">
+            <div class="button-compound-text">
+              CLEAR
+            </div>
+          </button>
+
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+
+  <div class = "page-header">
+    <div>
+      View Projects
+    </div>
+  </div>
+  
+  <div class = "page-content">
+
+    <div class = "page-segment" style="width:25%;">
+
+      <div class="pane">
+
+        <div class = "pane-content">
+          
+          <div class = "pane-header">
+            
+            <div class = "pane-header-text"> 
+
+              <div> PROJECTS </div>
+              
+            </div>
+
+            <div class = "pane-header-button"> 
+
+              <div class="button-compound" id="filter-button" onclick="openFilterMenu()">
+                
+                <img src ="filter_icon.svg" class="button-image">
+                            
+              </div>
+              
+            </div>
+            
+          </div>
+
+          <div class = "pane-data">
+
+            <div class ="list-item">
+              <a class = "list-item-link">[project.company.name - project.name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[project.company.name - project.name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[project.company.name - project.name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[project.company.name - project.name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[project.company.name - project.name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[project.company.name - project.name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[project.company.name - project.name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[project.company.name - project.name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[project.company.name - project.name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[project.company.name - project.name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[project.company.name - project.name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[project.company.name - project.name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[project.company.name - project.name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[project.company.name - project.name]</a>
+            </div>
+
+            <div class ="list-item">
+              <a class = "list-item-link">[project.company.name - project.name]</a>
+            </div>
+            
+          </div>
+
+          <div class = "pane-controls">
+
+            <div class="button-compound key hover">
+              <div class="button-compound-text">
+                SUBMIT PROJECT
+              </div>
+            </div>
+
+          </div>
+          
+        </div>
+        
+      </div>
+
+    </div>
+
+    <div class = "page-segment" style="width:75%;"">
+
+      <div class="pane">
+
+        <div class ="pane-content">
+
+          <div class = "pane-header">
+
+            <div class = "pane-header-text"> 
+
+              <div> PROJECT INFORMATION </div>
+
+            </div>
+
+            <div class = "pane-header-button"> 
+
+              <a class="button-compound" id="new-tabe-button">
+
+                <img src ="new_tab.svg" class="button-image">
+
+              </a>
+
+            </div>
+
+          </div>
+          
+          <div class = "pane-data">
+
+            <div class ="card-text-header center">
+              [project.name]
+            </div>
+
+            <div class ="card-text-header">
+              Meta Info
+            </div>
+
+            <table class ="card-text-column">
+              <tr>
+                <td>Database ID:</td>
+                <td>[project.id]</td>
+              </tr>
+              <tr>
+                <td>Submitted by:</td>
+                <td>[project.representative_id]</td>
+              </tr>
+            </table>
+
+            <div class ="card-text-header">
+              General Info
+            </div>
+
+            <table class ="card-text-column">
+              <tr>
+                <td>Company:</td>
+                <td>[project.company.name]</td>
+              </tr>
+              <tr>
+                <td>Project Title:</td>
+                <td>[project.name]</td>
+              </tr>
+            </table>
+
+            <div class ="card-text-header">
+              Shortlist
+            </div>
+
+            <table class ="card-text-column">
+              <tr>
+                <td>Status:</td>
+                <td>[FULL or WAITING]</td>
+              </tr>
+              <tr>
+                <td>Capacity:</td>
+                <td>[project.capcity]</td>
+              </tr>
+              <tr>
+                <td>List Size:</td>
+                <td>[project.shortlist_size]</td>
+              </tr>
+              <tr>
+                <td>Remaining:</td>
+                <td>[project.capacity - project.shortlist_size]</td>
+              </tr>
+            </table>
+
+            <div class ="card-text-header">
+              Description
+            </div>
+
+            <div class ="card-text">[project.description]</div>
+
+            <div class ="card-text-header">
+              Details
+            </div>
+
+            <table class ="card-text-column">
+
+              <tr>
+                <td>Format:</td>
+                <td>[project.format]</td>
+              </tr>
+              <tr>
+                <td>Duration:</td>
+                <td>[project.duration]</td>
+              </tr>
+            </table>
+
+            <div class ="card-text-header center">
+              REQUIREMENTS
+            </div>
+
+            <div class ="card-text-header">
+              Summary
+            </div>
+
+            <div class ="card-text">[project.requirement.summary]</div>
+
+            <div class ="card-text-header">
+              Disciplines
+            </div>
+
+            <table class ="card-text-column">
+              <tr>
+                <td>[project.requirement.discipline.area.icon]</td>
+                <td>[project.requirement..discipline.name]</td>
+              </tr>
+              <tr>
+                <td>[project.requirement.discipline.area.icon]</td>
+                <td>[project.requirement.discipline.name]</td>
+              </tr>
+              <tr>
+                <td>[project.requirement.discipline.area.icon]</td>
+                <td>[project.requirement.discipline.name]</td>
+              </tr>
+              <tr>
+                <td>[project.requirement.discipline.area.icon]</td>
+                <td>[project.requirement.discipline.name]</td>
+              </tr>
+            </table>
+
+            <div class ="card-text-header">
+              Other
+            </div>
+
+            <table class ="card-text-column">
+              <tr>
+                <td>Year</td>
+                <td>[project.requirement.year]</td>
+              </tr>
+              <tr>
+                <td>Residence</td>
+                <td>[project.requirement.residence]</td>
+              </tr>
+            </table>
+
+          </div>
+
+          <div class = "pane-controls">
+
+          <div class="button-compound hover">
+            <div class="button-compound-text">
+              EDIT
+            </div>
+          </div>
+
+          <div class="button-compound key hover">
+            <div class="button-compound-text">
+              VIEW SHORTLIST
+            </div>
+          </div>
+
+          <div class="button-compound key hover">
+            <div class="button-compound-text">
+              ADD STUDENT
+            </div>
+          </div>
+
+          <div class="button-compound hover">
+            <div class="button-compound-text">
+              REMOVE
+            </div>
+          </div>
+
+          </div>
+
+        </div>
+        
+      </div>
+
+    </div>
+
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+
+</html>
