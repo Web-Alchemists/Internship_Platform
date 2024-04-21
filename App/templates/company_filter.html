@@ -1,0 +1,34 @@
+{% extends "filter.html" %}
+
+{{ super() }}
+
+{% block open_id %}{{ filter_overlay_id }}{% endblock %}
+{% block close_id %}{{ filter_overlay_id }}{% endblock %}
+
+{% block filter_form %}
+<table style="width:98%;">
+              
+    <tr class ="form-field">
+      <td>
+        <label for="country_filter" class ="form-field-item">
+          Country:
+        </label>
+      </td>
+      <td>
+
+        <select id="country_filter" name="country_filter" class="form-field-item">
+
+          <option value="" class="select">All</option>
+          <option value="[country.name]" class="select">[country.name]</option>
+          <option value="[country.name]" class="select">[country.name]</option>
+          <option value="[country.name]" class="select">[country.name]</option>
+          <option value="[country.name]" class="select">[country.name]</option>
+          <option value="[country.name]" class="select">[country.name]</option>
+
+        </select>
+
+      </td>
+    </tr>
+    
+  </table>
+{% endblock %}

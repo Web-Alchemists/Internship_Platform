@@ -1,0 +1,193 @@
+{% extends "filter.html" %}
+
+{{ super() }}
+
+{% block open_id %}{{ filter_overlay_id }}{% endblock %}
+{% block close_id %}{{ filter_overlay_id }}{% endblock %}
+
+{% block filter_form %}
+<table style="width:98%;">
+            
+    <tr class ="form-field">
+      <td>
+        <label for="gpa_filter" class ="form-field-item">
+          Minimum GPA:
+        </label>
+      </td>
+      <td>
+        <input
+          type = "number"
+          id = "gpa_filter"
+          name = "gpa_filter"
+          class = "form-field-item"
+          value = "0"
+          min = "0"
+          max = "4"
+          step = "0.01"
+          placeholder = "0.00"
+        />
+      </td>
+    </tr>
+
+    <!-- <tr class ="form-field">
+      
+        <td>
+          <div class ="form-field-item">
+            Shortlisted:
+          </div>
+        </td>
+          
+        <td>
+          <label class="container">
+            
+            <input
+              type = "checkbox"
+              id = "check_filter"
+              name = "is_shortlisted"
+              value = ""
+              class = "form-field-item checkbox-hide"
+            >
+
+            <span class="checkmark"></span>
+            
+          </label>
+        </td>
+
+    </tr> -->
+
+    <tr class ="form-field">
+      <td>
+        <label for="faculty_filter" class ="form-field-item">
+          Faculty:
+        </label>
+      </td>
+      <td>
+
+        <select id="faculty_filter" name="faculty_filter" class="form-field-item">
+
+          <option value="" class="select">All</option>
+          <option value="[area.name]" class="select">[area.name]</option>
+          <option value="[area.name]" class="select">[area.name]</option>
+          <option value="[area.name]" class="select">[area.name]</option>
+          <option value="[area.name]" class="select">[area.name]</option>
+          <option value="[area.name]" class="select">[area.name]</option>
+
+        </select>
+
+      </td>
+    </tr>
+
+    <tr class ="form-field">
+      <td>
+        <label for="major_filter" class ="form-field-item">
+          Major:
+        </label>
+      </td>
+      <td>
+
+        <select id="major_filter" name="major_filter" class="form-field-item">
+
+          <option value="" class="select">All</option>
+          <option value="[programme.name]" class="select">[programme.faculty] - [programme.name]</option>
+          <option value="[programme.name]" class="select">[programme.faculty] - [programme.name]</option>
+          <option value="[programme.name]" class="select">[programme.faculty] - [programme.name]</option>
+          <option value="[programme.name]" class="select">[programme.faculty] - [programme.name]</option>
+          <option value="[programme.name]" class="select">[programme.faculty] - [programme.name]</option>
+
+        </select>
+
+      </td>
+    </tr>
+
+    <tr class ="form-field">
+      <td>
+        <label for="programme_filter" class ="form-field-item">
+          Programme:
+        </label>
+      </td>
+      <td>
+
+        <select id="programme_filter" name="programme_filter" class="form-field-item">
+
+          <option value="" class="select">All</option>
+          <option value="[programme.name]" class="select">[programme.faculty] - [programme.name]</option>
+          <option value="[programme.name]" class="select">[programme.faculty] - [programme.name]</option>
+          <option value="[programme.name]" class="select">[programme.faculty] - [programme.name]</option>
+          <option value="[programme.name]" class="select">[programme.faculty] - [programme.name]</option>
+          <option value="[programme.name]" class="select">[programme.faculty] - [programme.name]</option>
+          
+        </select>
+        
+      </td>
+    </tr>
+
+    <tr class ="form-field">
+      <td>
+        <label for="course_filter" class ="form-field-item">
+          Course:
+        </label>
+      </td>
+      <td>
+
+        <select id="course_filter" name="course_filter" class="form-field-item">
+
+          <option value="" class="select">All</option>
+          <option value="[course.name]" class="select">[course.code] - [course.name]</option>
+          <option value="[course.name]" class="select">[course.code] - [course.name]</option>
+          <option value="[course.name]" class="select">[course.code] - [course.name]</option>
+          <option value="[course.name]" class="select">[course.code] - [course.name]</option>
+          <option value="[course.name]" class="select">[course.code] - [course.name]</option>
+
+        </select>
+
+      </td>
+    </tr>
+
+    <tr class ="form-field">
+      <td>
+        <label for="residence_filter" class ="form-field-item">
+          Residence:
+        </label>
+      </td>
+      <td>
+
+        <select
+          id = "residence_filter"
+          name = "residence_filter"
+          class = "form-field-item multiple"
+        >
+
+          <option value="" class="select">All</option>
+          <option value="[residnece.name]" class="select">[residnece.name]</option>
+          <option value="[residnece.name]" class="select">[residence.name]</option>
+          <option value="[residnece.name]" class="select">[residence.name]</option>
+          <option value="[residence.name]" class="select">[residence.name]</option>
+          <option value="[residence.name]" class="select">[residence.name]</option>
+          
+
+        </select>
+
+      </td>
+    </tr>
+
+    <tr class ="form-field">
+      <td>
+        <label for="status_filter" class ="form-field-item">
+          Status:
+        </label>
+      </td>
+      <td>
+
+        <select id="status_filter" name="status_filter" class="form-field-item">
+
+          <option value="" class="select">Any</option>
+          <option value="is_shortlisted" class="select">Shortlisted</option>
+          <option value="not_shortlisted" class="select">Not Shortlisted</option>
+
+        </select>
+
+      </td>
+    </tr>
+    
+  </table>
+{% endblock %}

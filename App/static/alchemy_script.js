@@ -1,11 +1,12 @@
-function openFilterMenu()
+function openFilterMenu(id)
 {
-  document.getElementById("filter-pane-overlay").style.display = "flex";
+  // alert(id);
+  let overlay = document.getElementById(id).style.display = "flex";
 }
 
-function closeFilterMenu()
+function closeFilterMenu(id)
 {
-  document.getElementById("filter-pane-overlay").style.display = "none";
+  document.getElementById(id).style.display = "none";
 }
 
 function switchTabs(id)
@@ -59,7 +60,7 @@ function addDiscipline()
 
     <div class="button-compound contrast" onclick="removeDiscipline('discipline-${field_area.childElementCount}')">
 
-      <img src ="close_black.svg" class="button-compound-image">
+      <img src ="/static/icons/close_black.svg" class="button-compound-image">
       <div class="button-compound-text">
         REMOVE
       </div>
@@ -81,7 +82,7 @@ function addDiscipline()
 
     <div class="button-compound contrast" onclick="addDiscipline()">
 
-      <img src ="add_black.svg" class="button-compound-image">
+      <img src ="/static/icons/add_black.svg" class="button-compound-image">
       <div class="button-compound-text">
         ADD
       </div>
@@ -157,7 +158,7 @@ function addCourse()
 
     <div class="button-compound contrast" onclick="removeCourse('course-${field_area.childElementCount}')">
 
-      <img src ="close_black.svg" class="button-compound-image">
+      <img src ="/static/icons/close_black.svg" class="button-compound-image">
       <div class="button-compound-text">
         REMOVE
       </div>
@@ -179,7 +180,7 @@ function addCourse()
 
     <div class="button-compound contrast" onclick="addCourse()">
 
-      <img src ="add_black.svg" class="button-compound-image">
+      <img src ="/static/icons/add_black.svg" class="button-compound-image">
       <div class="button-compound-text">
         ADD
       </div>

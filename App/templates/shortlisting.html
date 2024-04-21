@@ -1,0 +1,281 @@
+{% extends "view.html" %}
+
+{{ super() }}
+
+{% block title %}Shortlisting{% endblock %}
+
+{% block navbar %}
+<a class="nav-link" href = "landing_page.html" style="font-family: Adlanta;">
+    ALCHEMY INTERNSHIPS
+  </a>
+  
+  <a class="nav-link" href = "home_page.html">HOME</a>
+  <a class="nav-link" href = "view_students_page.html">STUDENTS</a>
+  <a class="nav-link" href = "view_reps_page.html">REPS</a>
+  <a class="nav-link" href = "view_projects_page.html">PROJECTS</a>
+  <a class="nav-link" href = "view_companies_page.html">COMPANIES</a>
+  <a class="nav-link active" href = "shortlisting_page.html">SHORTLISTING</a>
+  <a class="nav-link" href = "student_form.html">EDIT INFO</a>
+  <a class="nav-link" href = "landing_page.html">LOG OUT</a>
+{% endblock %}
+
+  {% block filter_overlay %}
+  
+  {% set filter_overlay_id = "project-filter-overlay" %}
+
+  <div id='{{filter_overlay_id}}' class="filter-pane-overlay">
+    {% include "project_filter.html" %}
+  </div>
+
+  {% set filter_overlay_id = "student-filter-overlay" %}
+
+  <div id='{{filter_overlay_id}}' class="filter-pane-overlay">
+    {% include "student_filter.html" %}
+  </div>
+
+  {% endblock  %}
+
+  {% block page_header %}
+  <div class = "page-header">
+    <div>
+      Shortlisting Page
+    </div>
+  </div>
+  {% endblock %}
+  
+  {% block page_content %}
+
+  <div class = "page-content">
+
+    <div class = "page-segment" style="width:20%;">
+
+      <div class="pane">
+
+        <div class = "pane-content">
+
+          <div class = "pane-header">
+
+            <div class = "pane-header-text"> 
+
+              <div> PROJECTS </div>
+
+            </div>
+
+            <div class = "pane-header-button"> 
+
+              <div class="button-compound" id="filter-button" onclick="openFilterMenu('project-filter-overlay')">
+
+                <img src ="{{logo_path}}/filter_icon.svg" class="button-image">
+
+              </div>
+
+            </div>
+
+          </div>
+          
+          {% set test = 0 %}
+          {% set none_message = "NO PROJECTS" %}
+
+          <div class = "pane-data">
+
+            {% include "project_list.html" %}
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class = "page-segment" id = "project-pane" style="width:60%;">
+
+      <div class="pane">
+
+        <div class ="pane-content">
+
+          <div class = "pane-tab">
+            
+            <div id="project-tab" class = "pane-header tab selected" onclick="switchTabs('project-tab')">
+
+              <div class = "pane-header-text tab"> 
+
+                <div> PROJECT INFORMATION </div>
+
+              </div>
+
+              <div class = "pane-header-button"> 
+
+                <a class="button-compound" id="new-tabe-button">
+
+                  <img src ="{{logo_path}}/new_tab.svg" class="button-image">
+
+                </a>
+
+              </div>
+
+            </div>
+
+            <div id="student-tab" class = "pane-header tab" onclick="switchTabs('student-tab')">
+
+              <div class = "pane-header-text tab"> 
+
+                <div> STUDENT INFORMATION </div>
+
+              </div>
+
+            </div>
+            
+          </div>
+
+          {% set selected = false %}
+
+          <div class = "pane-data">
+            {% include "project_card.html" %}
+          </div>
+
+          <div class ="pane-controls">
+
+            <div class="button-compound hover key">
+
+              <img src ="{{logo_path}}/checkmark_white.svg" class="button-compound-image">
+
+              <div class="button-compound-text">
+
+                MATCH
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class = "page-segment" id = "student-pane" style="width:60%; display:none;"">
+
+      <div class= "pane">
+
+        <div class = "pane-content">
+
+          <div class = "pane-tab">
+
+            <div id="project-tab" class = "pane-header tab" onclick="switchTabs('project-tab')">
+
+              <div class = "pane-header-text tab"> 
+
+                <div> PROJECT INFORMATION </div>
+
+              </div>
+
+            </div>
+
+            <div id="student-tab" class = "pane-header tab selected" onclick="switchTabs('student-tab')">
+
+              <div class = "pane-header-text tab"> 
+
+                <div> STUDENT INFORMATION </div>
+
+              </div>
+
+              <div class = "pane-header-button"> 
+
+                <a class="button-compound" id="new-tabe-button">
+
+                  <img src ="{{logo_path}}/new_tab.svg" class="button-image">
+
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class = "pane-data">
+            {% include "student_card.html" %}
+          </div>
+
+          <div class ="pane-controls">
+
+            <div class="button-compound hover key">
+
+              <img src ="{{logo_path}}/checkmark_white.svg" class="button-compound-image">
+              
+              <div class="button-compound-text">
+                
+                MATCH
+                
+              </div>
+              
+            </div>
+
+          </div>
+
+        </div>     
+
+      </div>
+
+    </div>
+
+    <div class = "page-segment" style="width:20%;">
+
+      <div class="pane">
+
+        <div class = "pane-content">
+
+          <div class = "pane-header">
+
+            <div class = "pane-header-text"> 
+
+              <div> STUDENTS </div>
+
+            </div>
+
+            <div class = "pane-header-button"> 
+
+              <div class="button-compound" id="filter-button" onclick="openFilterMenu('student-filter-overlay')">
+
+                <img src ="{{logo_path}}/filter_icon.svg" class="button-image">
+
+              </div>
+
+            </div>
+
+          </div>
+
+          {% set test = 0 %}
+          {% set none_message = "NO STUDENTS" %}
+
+          <div class = "pane-data"> 
+
+            {% include "student_list.html" %}
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+    // function openFilterMenu(id)
+    // {
+    //   alert(id);
+    //   let overlay = document.getElementById(id).style.display = "flex";
+      
+    //   alert(overlay.childC)
+    // }
+
+    // function closeFilterMenu(id)
+    // {
+    //   document.getElementById(id).style.display = "none";
+    // }
+  </script>
+  {% endblock %}

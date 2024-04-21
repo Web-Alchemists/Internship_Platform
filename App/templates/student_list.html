@@ -1,0 +1,11 @@
+{% if test == 0 %}
+<div class ="not-selected-message">
+    {{none_message}}
+</div>
+{% else %}
+    {% for i in range (test) %}
+    <div class ="list-item">
+        <a class = "list-item-link">[student.first_name student.last_name]</a>
+    </div>
+    {% endfor %}
+{% endif %}

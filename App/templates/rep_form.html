@@ -1,0 +1,153 @@
+{% extends "form.html" %}
+
+{{ super() }}
+
+{% block page_header %}REPRESENTATIVE FORM{% endblock %}
+
+{% block pane_header %}REPRESENTATIVE INFORMATION{% endblock %}
+
+{% block form_action %}/signup/rep/form{% endblock %}
+
+{% block form_content %}
+<!-- Bio Fields -->
+<table class="form-table" style="width:98%;">
+
+    <tr>
+      <td>
+        <div class ="card-text-header">
+          BIO
+        </div>
+      </td>
+    </tr>
+    
+    <!--- First Name Field --->
+    <tr class ="form-field">
+      <td>
+        <label for="first-name-field" class ="form-field-item">
+          First Name:
+        </label>
+      </td>
+      <td>
+        <input
+          type = "text"
+          id = "first-name-field"
+          name = "first-name"
+          value = ""
+          class = "form-field-item"
+          placeholder = "Name" 
+          required
+        />
+      </td>
+    </tr>
+
+    <!--- Last Name Field --->
+    <tr class ="form-field">
+      <td>
+        <label for="last-name" class ="form-field-item">
+          Last Name:
+        </label>
+      </td>
+      <td>
+        <input
+          type = "text"
+          id = "last-name-field"
+          name = "last-name"
+          value = ""
+          class = "form-field-item"
+          placeholder = "Name" 
+          required
+        />
+      </td>
+    </tr>
+    
+  </table>
+  
+  <!-- Contact Fields -->
+  <table class="form-table" style="width:98%;">
+
+    <tr>
+      <td>
+        <div class ="card-text-header">
+          CONTACT
+        </div>
+      </td>
+    </tr>
+    
+    <!--- Email Field --->
+    <tr class ="form-field">
+      <td>
+        <label for="email-field" class ="form-field-item">
+          Email:
+        </label>
+      </td>
+      <td>
+        <input
+          type = "email"
+          id = "email-field"
+          name = "email"
+          value = ""
+          class = "form-field-item"
+          required
+        />
+      </td>
+    </tr>
+
+    <!---  Contact Field --->
+    <tr class ="form-field">
+      <td>
+        <label for="contact-field" class ="form-field-item">
+          Contact:
+        </label>
+      </td>
+      <td>
+        <input 
+          type = "tel"
+          id = "contact-field"
+          name = "contact"
+          value = ""
+          class = "form-field-item"
+          pattern = "[0-9]{3}-[0-9]{4}"
+          placeholder = "###-###" 
+          required
+        />
+      </td>
+    </tr>
+
+  </table>
+
+  <!-- Company Fields -->
+  <table class="form-table" style="width:98%;">
+
+    <tr>
+      <td>
+        <div class ="card-text-header">
+          COMPANY
+        </div>
+      </td>
+    </tr>
+
+    <!--- Company Field --->
+    <tr class ="form-field">
+
+      <td>
+        <label for="company-field" class ="form-field-item">
+          Your Company:
+        </label>
+      </td>
+      <td>
+
+        <select id="company-field" name="company" class="form-field-item" required>
+          
+          <option value="" disabled selected>[select]</option>
+          <option value="Company1" class="select">Company1</option>
+          <option value="Company2" class="select">Company2</option>
+          <option value="Company3" class="select">Company3</option>
+          <option value="Company4" class="select">Company4</option>
+          <option value="Company5" class="select">Company5</option>
+
+        </select>
+
+      </td>
+    </tr>
+  </table>
+{% endblock %}

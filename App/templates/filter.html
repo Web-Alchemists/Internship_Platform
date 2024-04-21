@@ -1,0 +1,53 @@
+<div class ="filter-pane">
+      
+    <div class = "filter-menu">
+      
+      <div class ="pane-header">
+
+        <div class ="pane-header-text">
+          FILTERS
+        </div>
+
+        <div class = "pane-header-button">
+
+          <div class="button-compound" id="filter-button onclick=" onclick="closeFilterMenu('{% block open_id %}{% endblock %}')">
+
+            <img src ="{{logo_path}}/close.svg" class="button-image">
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <form id= "form" class ="form">
+            
+          {% block filter_form %}{% endblock %}
+        
+      </form>
+
+      <div class ="pane-controls">
+
+        <button class="button-compound key hover" type="submit" form="form" onclick="closeFilterMenu('{% block close_id %}{% endblock %}')">
+
+            <img src ="{{logo_path}}/checkmark_white.svg" class="button-compound-image">
+          
+            <div class="button-compound-text">
+                APPLY
+            </div>
+        </button>
+
+        <button class="button-compound key hover" type="reset" form="form">
+            <img src ="{{logo_path}}/close_white.svg" class="button-compound-image">
+
+            <div class="button-compound-text">
+                CLEAR
+            </div>
+        </button>
+
+      </div>
+      
+    </div>
+    
+</div>
+

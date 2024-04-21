@@ -1,0 +1,59 @@
+{% if selected %}
+<div class ="card-text-header center">
+    [rep.first_name rep.last_name]
+  </div>
+
+  <div class ="card-text-header">
+    Meta Info
+  </div>
+
+  <table class ="card-text-column">
+    <tr>
+      <td>Database ID:</td>
+      <td>[rep.id]</td>
+    </tr>
+  </table>
+
+  <div class ="card-text-header">
+    Bio
+  </div>
+
+  <table class ="card-text-column">
+    <tr>
+      <td>First Name:</td>
+      <td>[rep.first_name]</td>
+    </tr>
+    <tr>
+      <td>Last Name:</td>
+      <td>[rep.last_name]</td>
+    </tr>
+  </table>
+
+  <div class ="card-text-header">
+    Representing Company
+  </div>
+
+  <table class ="card-text-column">
+    <tr>
+      <td>Company:</td>
+      <td>[rep.company.name]</td>
+    </tr>
+  </table>
+
+  <div class ="card-text-header">
+    Contact
+  </div>
+
+  <table class ="card-text-column">
+    <tr>
+      <td>Contact #:</td>
+      <td>[rep.contact]</td>
+    </tr>
+    <tr>
+      <td>Email:</td>
+      <td>[rep.email]</td>
+    </tr>
+  </table>
+{% else %}
+<div class = "not-selected-message">NO REPRESENTATIVE SELECTED</div>
+{% endif %}

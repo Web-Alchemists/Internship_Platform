@@ -1,0 +1,42 @@
+{% extends "home.html" %}
+
+{% block navbar %}
+    <a class="nav-link" href = "/" style="font-family: Adlanta;">HOME</a>
+    <a class="nav-link" href = "/signuptype">SUBMIT PROJECT</a>
+    <a class="nav-link" href = "/signuptype">PROJECTS</a>
+    <a class="nav-link" href = "/login">EDIT INFO</a>
+    <a class="nav-link" href = "/login">LOG OUT</a>
+{% endblock %}
+
+{% block menu_panel %}
+
+  <div class="button-compound left large key">
+
+    <img src ="{{ url_for('static', filename='icons/upload_white.svg') }}" class="button-compound-image large">
+
+    <div class ="button-compound-text large key">
+      SUBMIT PROJECT
+    </div>
+
+  </div>
+
+  <div class="button-compound left large key">
+
+    <img src ="{{ url_for('static', filename='icons/project_white.svg') }}" class="button-compound-image large">
+
+    <div class ="button-compound-text large key">
+      VIEW PROJECTS
+    </div>
+
+  </div>
+
+  <div class="button-compound left large key">
+
+    <img src ="{{ url_for('static', filename='icons/edit_white.svg') }}" class="button-compound-image large">
+
+    <div class ="button-compound-text large key">
+      EDIT INFO
+    </div>
+
+  </div>
+{% endblock %}

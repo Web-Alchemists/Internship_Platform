@@ -19,16 +19,66 @@ def get_signup_type():
     return render_template('signup_select.html')
 
 @user_views.route('/signup/student', methods=['GET'])
-def signup_student():
-    return render_template('signup.html')
+def signup_role_redirect():
+    role = "student"
+    return render_template('signup.html',role=role)
+
+@user_views.route('/signup/student', methods=['POST'])
+def signup_student_credentials():
+    return render_template('student_form.html')
+
+@user_views.route('/signup/student/form', methods=['GET'])
+def signup_student_form():
+    return render_template('student_form.html')
+
+@user_views.route('/signup/student/form', methods=['POST'])
+def signup_student_form_submission():
+    # form_data = request.form
+    # return render_template('form_data_test.html', form_data=form_data)
+    return render_template('student_home.html')
 
 @user_views.route('/signup/rep', methods=['GET'])
 def render_signup_page():
-    return render_template('signup.html')
+    role = "rep"
+    return render_template('signup.html', role=role)
+
+@user_views.route('/signup/rep', methods=['POST'])
+def signup_rep_credentials():
+    return render_template('rep_form.html')
+
+@user_views.route('/signup/rep/form', methods=['GET'])
+def signup_rep_form():
+    return render_template('rep_form.html')
+
+@user_views.route('/signup/rep/form', methods=['POST'])
+def signup_rep_form_submission():
+    # form_data = request.form
+    # return render_template('form_data_test.html', form_data=form_data)
+    return render_template('rep_home.html')
 
 @user_views.route('/login', methods=['GET'])
 def render_login_page():
     return render_template('login.html')
+
+@user_views.route('/students', methods=['GET'])
+def view_students_page():
+    return render_template('view_students.html')
+
+@user_views.route('/companies', methods=['GET'])
+def view_companies_page():
+    return render_template('view_companies.html')
+
+@user_views.route('/reps', methods=['GET'])
+def view_reps_page():
+    return render_template('view_reps.html')
+
+@user_views.route('/projects', methods=['GET'])
+def view_projects_page():
+    return render_template('view_projects.html')
+
+@user_views.route('/shortlisting', methods=['GET'])
+def shortlisting_page():
+    return render_template('shortlisting.html')
 
 # ----------------------------------------- #
 

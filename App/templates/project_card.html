@@ -1,0 +1,130 @@
+{% if selected %}
+<div class ="card-text-header center">
+    [project.name]
+  </div>
+
+  <div class ="card-text-header">
+    Meta Info
+  </div>
+
+  <table class ="card-text-column">
+    <tr>
+      <td>Database ID:</td>
+      <td>[project.id]</td>
+    </tr>
+    <tr>
+      <td>Submitted by:</td>
+      <td>[project.representative_id]</td>
+    </tr>
+  </table>
+
+  <div class ="card-text-header">
+    General Info
+  </div>
+
+  <table class ="card-text-column">
+    <tr>
+      <td>Company:</td>
+      <td>[project.company.name]</td>
+    </tr>
+    <tr>
+      <td>Project Title:</td>
+      <td>[project.name]</td>
+    </tr>
+  </table>
+
+  <div class ="card-text-header">
+    Shortlist
+  </div>
+
+  <table class ="card-text-column">
+    <tr>
+      <td>Status:</td>
+      <td>[FULL or WAITING]</td>
+    </tr>
+    <tr>
+      <td>Capacity:</td>
+      <td>[project.capcity]</td>
+    </tr>
+    <tr>
+      <td>List Size:</td>
+      <td>[project.shortlist_size]</td>
+    </tr>
+    <tr>
+      <td>Remaining:</td>
+      <td>[project.capacity - project.shortlist_size]</td>
+    </tr>
+  </table>
+
+  <div class ="card-text-header">
+    Description
+  </div>
+
+  <div class ="card-text">[project.description]</div>
+
+  <div class ="card-text-header">
+    Details
+  </div>
+
+  <table class ="card-text-column">
+
+    <tr>
+      <td>Format:</td>
+      <td>[project.format]</td>
+    </tr>
+    <tr>
+      <td>Duration:</td>
+      <td>[project.duration]</td>
+    </tr>
+  </table>
+
+  <div class ="card-text-header center">
+    REQUIREMENTS
+  </div>
+
+  <div class ="card-text-header">
+    Summary
+  </div>
+
+  <div class ="card-text">[project.requirement.summary]</div>
+
+  <div class ="card-text-header">
+    Disciplines
+  </div>
+
+  <table class ="card-text-column">
+    <tr>
+      <td>[project.requirement.discipline.area.icon]</td>
+      <td>[project.requirement..discipline.name]</td>
+    </tr>
+    <tr>
+      <td>[project.requirement.discipline.area.icon]</td>
+      <td>[project.requirement.discipline.name]</td>
+    </tr>
+    <tr>
+      <td>[project.requirement.discipline.area.icon]</td>
+      <td>[project.requirement.discipline.name]</td>
+    </tr>
+    <tr>
+      <td>[project.requirement.discipline.area.icon]</td>
+      <td>[project.requirement.discipline.name]</td>
+    </tr>
+  </table>
+
+  <div class ="card-text-header">
+    Other
+  </div>
+
+  <table class ="card-text-column">
+    <tr>
+      <td>Year</td>
+      <td>[project.requirement.year]</td>
+    </tr>
+    <tr>
+      <td>Residence</td>
+      <td>[project.requirement.residence]</td>
+    </tr>
+  </table>
+{% else %}
+<div class = "not-selected-message">NO PROJECT SELECTED</div>
+{% endif %}

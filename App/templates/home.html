@@ -1,0 +1,32 @@
+{% extends "navbar.html" %}
+{% block title %}Home{% endblock %}
+
+{% block navbar %}{% endblock %}
+
+{% block page_header %}
+<div class = "page-header center">
+    <div>
+      WELCOME [user.first_name]
+    </div>
+  </div>
+{% endblock %}
+
+{% block page_content %}
+<div class = "page-content">
+
+    <div class = "page-segment" style="width:100%;">
+
+      <div class="pane">
+
+        <div class = "menu-panel">
+
+          {% block menu_panel %}{% endblock %}
+          
+        </div>        
+
+      </div>
+
+    </div>
+    
+</div>
+{% endblock %}

@@ -1,0 +1,161 @@
+{% extends "filter.html" %}
+
+{{ super() }}
+
+{% block open_id %}{{ filter_overlay_id }}{% endblock %}
+{% block close_id %}{{ filter_overlay_id }}{% endblock %}
+
+{% block filter_form %}
+<table style="width:98%;">
+
+    <tr class ="form-field">
+      <td>
+        <label for="shortlist_filter" class ="form-field-item">
+          Shortlist Status:
+        </label>
+      </td>
+      <td>
+
+        <select id="shortlist_filter" name="shortlist_filter" class="form-field-item">
+
+          <option value="" class="select">All</option>
+          <option value="waiting" class="select">Waiting</option>
+          <option value="full" class="select">Full</option>
+
+        </select>
+
+      </td>
+    </tr>
+    
+    <tr class ="form-field">
+      <td>
+        <label for="company_filter" class ="form-field-item">
+          Company:
+        </label>
+      </td>
+      <td>
+
+        <select id="company_filter" name="company_filter" class="form-field-item">
+
+          <option value="" class="select">All</option>
+          <option value="[company.name]" class="select">[company.name]</option>
+          <option value="[company.name]" class="select">[company.name]</option>
+          <option value="[company.name]" class="select">[company.name]</option>
+          <option value="[company.name]" class="select">[company.name]</option>
+          <option value="[company.name]" class="select">[company.name]</option>
+
+        </select>
+
+      </td>
+    </tr>
+
+    <tr class ="form-field">
+      <td>
+        <label for="format_filter" class ="form-field-item">
+          Format:
+        </label>
+      </td>
+      <td>
+
+        <select id="format_filter" name="format_filter" class="form-field-item">
+
+          <option value="" class="select">All</option>
+          <option value="physical" class="select">Physical</option>
+          <option value="online" class="select">Online</option>
+          <option value="hybrid" class="select">Hybird</option>
+
+        </select>
+
+      </td>
+    </tr>
+
+    <tr class ="form-field">
+      <td>
+        <label for="area_filter" class ="form-field-item">
+          Area:
+        </label>
+      </td>
+      <td>
+
+        <select id="area_filter" name="area_filter" class="form-field-item">
+
+          <option value="" class="select">All</option>
+          <option value="[area.name]" class="select">[area.name]</option>
+          <option value="[area.name]" class="select">[area.name]</option>
+          <option value="[area.name]" class="select">[area.name]</option>
+          <option value="[area.name]" class="select">[area.name]</option>
+          <option value="[area.name]" class="select">[area.name]</option>
+
+        </select>
+
+      </td>
+    </tr>
+
+    <tr class ="form-field">
+      <td>
+        <label for="discipline_filter" class ="form-field-item">
+          Discipline:
+        </label>
+      </td>
+      <td>
+
+        <select id="discipline_filter" name="discipline_filter" class="form-field-item">
+
+          <option value="" class="select">All</option>
+          <option value="[discipline.name]" class="select">[discipline.name]</option>
+          <option value="[discipline.name]" class="select">[discipline.name]</option>
+          <option value="[discipline.name]" class="select">[discipline.name]</option>
+          <option value="[discipline.name]" class="select">[discipline.name]</option>
+          <option value="[discipline.name]" class="select">[discipline.name]</option>
+          
+        </select>
+        
+      </td>
+    </tr>
+
+    <tr class ="form-field">
+      <td>
+        <label for="year_requirement_filter" class ="form-field-item">
+          Year Requirement:
+        </label>
+      </td>
+      <td>
+
+        <select id="year_requirement_filter" name="year_requirement_filter" class="form-field-item">
+
+          <option value="" class="select">All</option>
+          <option value="1" class="select">1</option>
+          <option value="2" class="select">2</option>
+          <option value="3" class="select">3</option>
+          <option value="4" class="select">4</option>
+          <option value="5" class="select">5</option>
+
+        </select>
+
+      </td>
+    </tr>
+
+    <tr class ="form-field">
+      <td>
+        <label for="course_filter" class ="form-field-item">
+          Residence Requirement:
+        </label>
+      </td>
+      <td>
+
+        <select id="course_filter" name="course_filter" class="form-field-item">
+
+          <option value="" class="select">All</option>
+          <option value="[country.name]" class="select">[country.name]</option>
+          <option value="[country.name]" class="select">[country.name]</option>
+          <option value="[country.name]" class="select">[country.name]</option>
+          <option value="[country.name]" class="select">[country.name]</option>
+          <option value="[country.name]" class="select">[country.name]</option>
+
+        </select>
+
+      </td>
+    </tr>
+    
+  </table>
+{% endblock %}

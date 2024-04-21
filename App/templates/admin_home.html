@@ -1,0 +1,75 @@
+
+{% extends "home.html" %}
+
+{% block navbar %}
+    <a class="nav-link" href = "/" style="font-family: Adlanta;">HOME</a>
+    <a class="nav-link" href = "/signuptype">SHORTLISTING</a>
+    <a class="nav-link" href = "/signuptype">STUDENTS</a>
+    <a class="nav-link" href = "/login">COMPANIES</a>
+    <a class="nav-link" href = "/login">REPS</a>
+    <a class="nav-link" href = "/login">PROJECTS</a>
+    <a class="nav-link" href = "/login">EDIT INFO</a>
+    <a class="nav-link" href = "/login">LOG OUT</a>
+{% endblock %}
+
+{% block menu_panel %}
+<div class="button-compound left large key">
+
+    <img src ="{{ url_for('static', filename='icons/shortlist_white.svg') }}" class="button-compound-image large">
+
+    <div class ="button-compound-text large key">
+      SHORTLISTING
+    </div>
+
+  </div>
+
+  <div class="button-compound left large key">
+
+    <img src ="{{ url_for('static', filename='icons/person_white.svg') }}" class="button-compound-image large">
+
+    <div class ="button-compound-text large key">
+      VIEW STUDENTS
+    </div>
+
+  </div>
+
+  <div class="button-compound left large key">
+
+    <img src ="{{ url_for('static', filename='icons/company_white.svg') }}" class="button-compound-image large">
+
+    <div class ="button-compound-text large key">
+      VIEW COMPANIES
+    </div>
+
+  </div>
+
+  <div class="button-compound left large key">
+
+    <img src ="{{ url_for('static', filename='icons/person_white.svg') }}" class="button-compound-image large">
+
+    <div class ="button-compound-text large key">
+      REPRESENTATIVES
+    </div>
+
+  </div>
+
+  <div class="button-compound left large key">
+
+    <img src ="{{ url_for('static', filename='icons/project_white.svg') }}" class="button-compound-image large">
+
+    <div class ="button-compound-text large key">
+      VIEW PROJECTS
+    </div>
+
+  </div>
+
+  <div class="button-compound left large key">
+
+    <img src ="{{ url_for('static', filename='icons/edit_white.svg') }}" class="button-compound-image large">
+
+    <div class ="button-compound-text large key">
+      EDIT INFO
+    </div>
+
+  </div>
+{% endblock %}

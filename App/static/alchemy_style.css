@@ -416,6 +416,18 @@ body
   /* background-color: #D6DCE5; */
 }
 
+.not-selected-message
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height:90%;
+  margin: 16px 0px;
+  opacity:50%;
+}
+
 .list-item
 {
   cursor: pointer;
@@ -622,7 +634,7 @@ body
   }
 }
 
-#filter-pane-overlay {
+.filter-pane-overlay {
   position: fixed;
   display: none;
   width: 100%;
