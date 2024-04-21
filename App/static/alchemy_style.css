@@ -737,6 +737,12 @@ body
   margin:15px;
 }
 
+.form-field-asterisk
+{
+  color:red;
+  text-align: left;
+}
+
 input
 {
   font-family: Comfortaa;

@@ -1,0 +1,123 @@
+{% extends "form.html" %}
+
+{{ super() }}
+
+{% block page_header %}COMPANY FORM{% endblock %}
+
+{% block pane_header %}COMPANY INFORMATION{% endblock %}
+
+{% block form_action %}/company/add{% endblock %}
+
+{% block form_content %}
+
+<!-- Info Fields -->
+<table class="form-table" style="width:98%;">
+
+    <tr>
+    <td>
+        <div class ="card-text-header">
+        INFO
+        </div>
+    </td>
+    </tr>
+    
+    <!--- Name Field --->
+    <tr class ="form-field">
+    <td>
+        <span class = "form-field-asterisk">*</span>
+
+        <label for="name-field" class ="form-field-item">
+        Name:
+        </label>
+    </td>
+    <td>
+        <input
+        type = "text"
+        id = "name-field"
+        name = "name"
+        value = ""
+        class = "form-field-item"
+        placeholder = "Name" 
+        required
+        />
+    </td>
+    </tr>
+
+</table>
+
+<!-- Contact Fields -->
+<table class="form-table" style="width:98%;">
+
+    <tr>
+    <td>
+        <div class ="card-text-header">
+        Website<span class = "form-field-asterisk">*</span>
+        </div>
+    </td>
+    </tr>
+
+    <!---  Website Field --->
+    <tr class ="form-field">
+        <td>
+            <label for="website-field" class ="form-field-item">
+            Contact:
+            </label>
+        </td>
+        <td>
+            <input 
+            type = "text"
+            id = "website-field"
+            name = "website"
+            value = ""
+            class = "form-field-item"
+            placeholder = "site.com" 
+            />
+        </td>
+        </tr>
+    
+    <!--- Email Field --->
+    <tr class ="form-field required">
+    <td>
+        <span class = "form-field-asterisk">*</span>
+
+        <label for="email-field" class ="form-field-item">
+        Email:
+        </label>
+    </td>
+    <td>
+        <input
+        type = "email"
+        id = "email-field"
+        name = "email"
+        value = ""
+        class = "form-field-item"
+        required
+        />
+    </td>
+    </tr>
+
+    <!---  Contact Field --->
+    <tr class ="form-field">
+    <td>
+        <span class = "form-field-asterisk">*</span>
+
+        <label for="contact-field" class ="form-field-item">
+        Contact:
+        </label>
+    </td>
+    <td>
+        <input 
+        type = "tel"
+        id = "contact-field"
+        name = "contact"
+        value = ""
+        class = "form-field-item"
+        pattern = "[0-9]{3}-[0-9]{4}"
+        placeholder = "###-###" 
+        required
+        />
+    </td>
+    </tr>
+
+</table>
+{% endblock %}

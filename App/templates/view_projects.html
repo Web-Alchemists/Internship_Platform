@@ -5,18 +5,7 @@
 {% block title %}Projects{% endblock %}
 
 {% block navbar %}
-<a class="nav-link" href = "/" style="font-family: Adlanta;">
-    ALCHEMY INTERNSHIPS
-  </a>
-  
-  <a class="nav-link" href = "/">HOME</a>
-  <a class="nav-link" href = "/students">STUDENTS</a>
-  <a class="nav-link" href = "/reps">REPS</a>
-  <a class="nav-link" href = "/projects">PROJECTS</a>
-  <a class="nav-link" href = "/companies">COMPANIES</a>
-  <a class="nav-link" href = "/shortlisting">SHORTLISTING</a>
-  <a class="nav-link" href = "/">EDIT INFO</a>
-  <a class="nav-link" href = "/">LOG OUT</a>
+{% include "admin_navbar.html" %}
 {% endblock %}
 
   {% block filter_overlay %}
@@ -24,6 +13,8 @@
   {% set filter_overlay_id = "filter-overlay" %}
 
   <div id='{{filter_overlay_id}}' class="filter-pane-overlay">
+    {% set filter_form_id = "project_filter_form" %}
+    {% set filter_form_action = "/projects" %}
     {% include "project_filter.html" %}
   </div>
 
@@ -73,6 +64,10 @@
             <div class = "pane-data">
                 {% include "project_list.html" %}              
             </div>
+
+            <div class = "pane-controls">
+              {% include "project_list_controls.html" %}              
+            </div>
             
           </div>
           
@@ -114,7 +109,7 @@
 
         <div class ="pane-controls">
 
-            {% include "project_controls.html" %}
+            {% include "project_card_controls.html" %}
 
         </div>
 

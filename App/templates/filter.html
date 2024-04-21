@@ -20,7 +20,7 @@
 
       </div>
 
-      <form id= "form" class ="form">
+      <form id= "{% block form_id %}{% endblock %}" name= "{% block form_name %}{% endblock %}" class ="form" method="post" action="{% block form_action %}{% endblock %}">
             
           {% block filter_form %}{% endblock %}
         
@@ -28,12 +28,12 @@
 
       <div class ="pane-controls">
 
-        <button class="button-compound key hover" type="submit" form="form" onclick="closeFilterMenu('{% block close_id %}{% endblock %}')">
+        <button class="button-compound key hover" type="submit" form="{% block form_submit_id %}{% endblock %}" onclick="closeFilterMenu('{% block close_id %}{% endblock %}')">
 
             <img src ="{{logo_path}}/checkmark_white.svg" class="button-compound-image">
           
             <div class="button-compound-text">
-                APPLY
+                APPLY ({% block form_id_test %}{% endblock %})
             </div>
         </button>
 

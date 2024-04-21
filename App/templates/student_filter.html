@@ -5,20 +5,27 @@
 {% block open_id %}{{ filter_overlay_id }}{% endblock %}
 {% block close_id %}{{ filter_overlay_id }}{% endblock %}
 
+{% block form_id %}{{filter_form_id}}{% endblock %}
+{% block form_name %}{{filter_form_id}}{% endblock %}
+{% block form_action %}{{filter_form_action}}{% endblock %}
+{% block form_submit_id %}{{filter_form_id}}{% endblock %}
+{% block form_id_test %}{{filter_form_id}}{% endblock %}
+
 {% block filter_form %}
 <table style="width:98%;">
-            
+    
+    {{filter_form_id}}
     <tr class ="form-field">
       <td>
-        <label for="gpa_filter" class ="form-field-item">
+        <label for="gpa-filter" class ="form-field-item">
           Minimum GPA:
         </label>
       </td>
       <td>
         <input
           type = "number"
-          id = "gpa_filter"
-          name = "gpa_filter"
+          id = "gpa-filter"
+          name = "gpa"
           class = "form-field-item"
           value = "0"
           min = "0"
@@ -57,13 +64,13 @@
 
     <tr class ="form-field">
       <td>
-        <label for="faculty_filter" class ="form-field-item">
+        <label for="faculty-filter" class ="form-field-item">
           Faculty:
         </label>
       </td>
       <td>
 
-        <select id="faculty_filter" name="faculty_filter" class="form-field-item">
+        <select id="faculty-filter" name="faculty" class="form-field-item">
 
           <option value="" class="select">All</option>
           <option value="[area.name]" class="select">[area.name]</option>
@@ -79,13 +86,13 @@
 
     <tr class ="form-field">
       <td>
-        <label for="major_filter" class ="form-field-item">
+        <label for="major-filter" class ="form-field-item">
           Major:
         </label>
       </td>
       <td>
 
-        <select id="major_filter" name="major_filter" class="form-field-item">
+        <select id="major-filter" name="major" class="form-field-item">
 
           <option value="" class="select">All</option>
           <option value="[programme.name]" class="select">[programme.faculty] - [programme.name]</option>
@@ -101,13 +108,13 @@
 
     <tr class ="form-field">
       <td>
-        <label for="programme_filter" class ="form-field-item">
+        <label for="programme-filter" class ="form-field-item">
           Programme:
         </label>
       </td>
       <td>
 
-        <select id="programme_filter" name="programme_filter" class="form-field-item">
+        <select id="programme-filter" name="programme" class="form-field-item">
 
           <option value="" class="select">All</option>
           <option value="[programme.name]" class="select">[programme.faculty] - [programme.name]</option>
@@ -123,13 +130,13 @@
 
     <tr class ="form-field">
       <td>
-        <label for="course_filter" class ="form-field-item">
+        <label for="course-filter" class ="form-field-item">
           Course:
         </label>
       </td>
       <td>
 
-        <select id="course_filter" name="course_filter" class="form-field-item">
+        <select id="course-filter" name="course" class="form-field-item">
 
           <option value="" class="select">All</option>
           <option value="[course.name]" class="select">[course.code] - [course.name]</option>
@@ -145,15 +152,15 @@
 
     <tr class ="form-field">
       <td>
-        <label for="residence_filter" class ="form-field-item">
+        <label for="residence-filter" class ="form-field-item">
           Residence:
         </label>
       </td>
       <td>
 
         <select
-          id = "residence_filter"
-          name = "residence_filter"
+          id = "residence-filter"
+          name = "residence"
           class = "form-field-item multiple"
         >
 
@@ -178,7 +185,7 @@
       </td>
       <td>
 
-        <select id="status_filter" name="status_filter" class="form-field-item">
+        <select id="status_filter" name="status" class="form-field-item">
 
           <option value="" class="select">Any</option>
           <option value="is_shortlisted" class="select">Shortlisted</option>

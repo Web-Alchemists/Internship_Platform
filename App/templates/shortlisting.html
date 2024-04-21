@@ -5,18 +5,9 @@
 {% block title %}Shortlisting{% endblock %}
 
 {% block navbar %}
-<a class="nav-link" href = "landing_page.html" style="font-family: Adlanta;">
-    ALCHEMY INTERNSHIPS
-  </a>
   
-  <a class="nav-link" href = "home_page.html">HOME</a>
-  <a class="nav-link" href = "view_students_page.html">STUDENTS</a>
-  <a class="nav-link" href = "view_reps_page.html">REPS</a>
-  <a class="nav-link" href = "view_projects_page.html">PROJECTS</a>
-  <a class="nav-link" href = "view_companies_page.html">COMPANIES</a>
-  <a class="nav-link active" href = "shortlisting_page.html">SHORTLISTING</a>
-  <a class="nav-link" href = "student_form.html">EDIT INFO</a>
-  <a class="nav-link" href = "landing_page.html">LOG OUT</a>
+  {% include "admin_navbar.html" %}
+
 {% endblock %}
 
   {% block filter_overlay %}
@@ -24,12 +15,16 @@
   {% set filter_overlay_id = "project-filter-overlay" %}
 
   <div id='{{filter_overlay_id}}' class="filter-pane-overlay">
+    {% set filter_form_id = "project_filter_form" %}
+    {% set filter_form_action = "/shortlisting" %}
     {% include "project_filter.html" %}
   </div>
 
   {% set filter_overlay_id = "student-filter-overlay" %}
 
   <div id='{{filter_overlay_id}}' class="filter-pane-overlay">
+    {% set filter_form_id = "student_filter_form" %}
+    {% set filter_form_action = "/shortlisting" %}
     {% include "student_filter.html" %}
   </div>
 
