@@ -1,11 +1,11 @@
-{% if test == 0 %}
+{% if projects %}
+    {% for project in projects %}
+    <div class ="list-item">
+        <a class = "list-item-link">{{project.company.name}} - {{project.name}}</a>
+    </div>
+    {% endfor %}
+{% else %}
 <div class ="not-selected-message">
     {{none_message}}
 </div>
-{% else %}
-    {% for i in range (test) %}
-    <div class ="list-item">
-        <a class = "list-item-link">[project{{i+1}}.company.name - project{{i+1}}.name]</a>
-    </div>
-    {% endfor %}
 {% endif %}

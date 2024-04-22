@@ -10,11 +10,7 @@
   <table class ="card-text-column">
     <tr>
       <td>Database ID:</td>
-      <td>[company.id]</td>
-    </tr>
-    <tr>
-      <td>Submitted by:</td>
-      <td>[company.init_representative.id]</td>
+      <td>{{selected.id}}</td>
     </tr>
   </table>
 
@@ -25,11 +21,11 @@
   <table class ="card-text-column">
     <tr>
       <td>Company Name:</td>
-      <td>[company.name]</td>
+      <td>{{company.name}}</td>
     </tr>
     <tr>
       <td>Number of Representatives:</td>
-      <td>[num_representatives]</td>
+      <td>{{num_representatives}}</td>
     </tr>
   </table>
 
@@ -40,15 +36,15 @@
   <table class ="card-text-column">
     <tr>
       <td>Website:</td>
-      <td>[company.website]</td>
+      <td>{{company.website}}</td>
     </tr>
     <tr>
       <td>Contact #:</td>
-      <td>[company.contact]</td>
+      <td>{{company.contact}}</td>
     </tr>
     <tr>
       <td>Email:</td>
-      <td>[company.email]</td>
+      <td>{{company.email}}</td>
     </tr>
   </table>
 {% else %}

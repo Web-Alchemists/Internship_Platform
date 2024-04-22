@@ -121,14 +121,17 @@ class Representative(db.Model):
 class Admin(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id')) 
     email = db.Column(db.String(120), nullable=False)
 
-    def __init__(self, email):
+    def __init__(self, user_id, email):
+        self.user_id = user_id
         self.email = email
 
     def get_json(self):
         return {
             'id': self.id,
+            'user-d': selft.user_id,
             'email': self.email
         }
   

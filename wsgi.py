@@ -106,6 +106,7 @@ def initialize():
     db.drop_all()
     db.create_all()
     create_user('bob', 'bobpass')
+    create_admin(1, "bobmail")
     create_all_countries()
     create_all_areas()
     create_all_disciplines()

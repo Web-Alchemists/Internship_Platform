@@ -1,11 +1,11 @@
-{% if test == 0 %}
-<div class ="not-selected-message">
-    {{none_message}}
-</div>
-{% else %}
-    {% for i in range (test) %}
+{% if reps %}
+    {% for rep in reps %}
     <div class ="list-item">
         <a class = "list-item-link">[rep.first_name rep.last_name]</a>
     </div>
     {% endfor %}
+{% else %}
+<div class ="not-selected-message">
+    {{none_message}}
+</div>
 {% endif %}

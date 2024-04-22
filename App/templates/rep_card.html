@@ -1,6 +1,6 @@
 {% if selected %}
 <div class ="card-text-header center">
-    [rep.first_name rep.last_name]
+    {{rep.first_name rep.last_name}}
   </div>
 
   <div class ="card-text-header">
@@ -10,7 +10,7 @@
   <table class ="card-text-column">
     <tr>
       <td>Database ID:</td>
-      <td>[rep.id]</td>
+      <td>{{rep.id}}</td>
     </tr>
   </table>
 
@@ -21,11 +21,11 @@
   <table class ="card-text-column">
     <tr>
       <td>First Name:</td>
-      <td>[rep.first_name]</td>
+      <td>{{rep.first_name}}</td>
     </tr>
     <tr>
       <td>Last Name:</td>
-      <td>[rep.last_name]</td>
+      <td>{{rep.last_name}}</td>
     </tr>
   </table>
 
@@ -36,7 +36,7 @@
   <table class ="card-text-column">
     <tr>
       <td>Company:</td>
-      <td>[rep.company.name]</td>
+      <td>{{rep.company.name}}</td>
     </tr>
   </table>
 
@@ -47,11 +47,11 @@
   <table class ="card-text-column">
     <tr>
       <td>Contact #:</td>
-      <td>[rep.contact]</td>
+      <td>{{rep.contact}}</td>
     </tr>
     <tr>
       <td>Email:</td>
-      <td>[rep.email]</td>
+      <td>{{rep.email}}</td>
     </tr>
   </table>
 {% else %}

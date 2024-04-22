@@ -7,7 +7,12 @@ from App.controllers import *
 
 rep_views = Blueprint('rep_views', __name__, template_folder='../templates')
 
-@jwt_required()
 @rep_views.route('/rep/home', methods=['GET'])
+@jwt_required()
 def home_page():
     return render_template('rep_home.html')
+
+@rep_views.route('/rep/projects', methods=['GET'])
+@jwt_required()
+def projects_page():
+    return render_template('view_projects.html', projects=projects)

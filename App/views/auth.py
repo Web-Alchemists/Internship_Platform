@@ -112,13 +112,13 @@ def signup_action():
   flash('Account created')
   return response
 
-@jwt_required()
 @auth_views.route('/signup/rep/form', methods=['GET'])
+@jwt_required()
 def signup_rep_form():
     return render_template('rep_form.html')
 
-@jwt_required()
 @auth_views.route('/signup/rep/form', methods=['POST'])
+@jwt_required()
 def signup_rep_form_submission():
   response = None
   try:

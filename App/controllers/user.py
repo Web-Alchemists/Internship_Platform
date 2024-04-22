@@ -7,6 +7,12 @@ def create_user(username, password):
     db.session.commit()
     return new_user
 
+def create_admin(id, email):
+    new_admin = Admin(user_id=id, email=email)
+    db.session.add(new_admin)
+    db.session.commit()
+    return new_admin
+
 def get_user_by_username(username):
     return User.query.filter_by(username=username).first()
 
