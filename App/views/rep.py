@@ -5,9 +5,9 @@ from.index import index_views
 
 from App.controllers import *
 
-student_views = Blueprint('student_views', __name__, template_folder='../templates')
+rep_views = Blueprint('rep_views', __name__, template_folder='../templates')
 
 @jwt_required()
-@student_views.route('/student/home', methods=['GET'])
+@rep_views.route('/rep/home', methods=['GET'])
 def home_page():
-    return render_template('student_home.html')
+    return render_template('rep_home.html')

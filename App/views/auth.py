@@ -1,11 +1,14 @@
 from flask import Blueprint, render_template, jsonify, request, flash, send_from_directory, flash, redirect, url_for
 from flask_jwt_extended import jwt_required, current_user, unset_jwt_cookies, set_access_cookies
+from sqlalchemy.exc import IntegrityError
 
 from.index import index_views
 
 from App.controllers import (
     login
 )
+
+from App.models import *
 
 auth_views = Blueprint('auth_views', __name__, template_folder='../templates')
 
@@ -35,7 +38,7 @@ Page/Action Routes
 #     return render_template('message.html', title="Identify", message=f"You are logged in as {current_user.id} - {current_user.username}")
 
 @auth_views.route('/login', methods=['GET'])
-def render_login_page():
+def login_page():
     return render_template('login.html')
 
 @auth_views.route('/login', methods=['POST'])
@@ -63,19 +66,19 @@ def signup_page_student():
 @auth_views.route('/signup/student', methods=['POST'])
 def signup_student_action():
   data = request.form  # get data from form submission
-  new_user = Student(username=data['username'], password=data['password'])  # create user object
+  new_user = User(username=data['username'], password=data['password'])  # create user object
   response = None
   try:
     db.session.add(new_user)
     db.session.commit()  # save user
     token = login_user(data['username'], data['password'])
-    response = redirect(url_for('student_home_page'))
+    response = redirect(url_for('student_views.home_page'))
     set_access_cookies(response, token)
     flash('Account Created!')  # send message
   except Exception:  # attempted to insert a duplicate user
     db.session.rollback()
     flash("username or email already exists")  # error message
-    response = redirect(url_for('login_page'))
+    response = redirect(url_for('auth_views.login_page'))
   return response
 
 @auth_views.route('/signup/student/form', methods=['GET'])
@@ -92,15 +95,6 @@ def signup_page_rep():
     role = "rep"
     return render_template('signup.html', role=role)
 
-@auth_views.route('/signup/rep/form', methods=['GET'])
-def signup_rep_form():
-    return render_template('rep_form.html')
-
-@auth_views.route('/signup/rep/form', methods=['POST'])
-def signup_rep_form_submission():
-    form_data = request.form
-    return render_template('form_data_test.html', form_data=form_data)
-
 @auth_views.route("/signup/rep", methods=['POST'])
 def signup_action():
   response = None
@@ -110,14 +104,32 @@ def signup_action():
     user = User(username=username, password=password)
     db.session.add(user)
     db.session.commit()
-    response = redirect(url_for('rep_views.home_page'))
-    token = create_access_token(identity=user)
-    set_access_cookies(response, token)
+    token = login(request.form['username'], request.form['password'])
+    response = redirect(url_for('auth_views.signup_rep_form'))
   except IntegrityError:
     flash('Username already exists')
     response = redirect(url_for('signup_page'))
   flash('Account created')
   return response
+
+@jwt_required()
+@auth_views.route('/signup/rep/form', methods=['GET'])
+def signup_rep_form():
+    return render_template('rep_form.html')
+
+@jwt_required()
+@auth_views.route('/signup/rep/form', methods=['POST'])
+def signup_rep_form_submission():
+  response = None
+  try:
+    data = request.form
+    rep = Representative(user_id=current_user.id, first_name=data['first-name'], last_name=data['last-name'], email=data['email'], contact=data['contact'], company=data['company'])
+    db.session.add(rep)
+    db.session.commit()
+    return render_template(url_for('rep_views.home_page'))
+  except IntegrityError:
+    flash('Invalid data')
+    response = redirect(url_for('/signup/rep/form'))
 
 @auth_views.route("/logout", methods=['GET'])
 @jwt_required()

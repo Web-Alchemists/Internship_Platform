@@ -75,13 +75,15 @@ class Student(db.Model):
 class Representative(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id')) 
     username = db.Column(db.String, nullable=False, unique=True)
     password = db.Column(db.String(120), nullable=False)
     email = db.Column(db.String(120), nullable=False)
     contact = db.Column(db.String(100), nullable=False)
     company = db.Relationship('CompanyRep', backref='representative', lazy=True)
 
-    def __init__(self, first_name, last_name, contact, company):
+    def __init__(self, user_id, first_name, last_name, contact, company):
+        self.user_id = user_id
         self.first_name = first_name
         self.last_name = last_name
         self.contact = contact
@@ -90,7 +92,7 @@ class Representative(db.Model):
     def get_json(self):
         return {
             'id': self.id,
-            'rep_id': self.rep_id,
+            'user_id': self.user_id,
             'first_name': self.first_name,
             'last_name': self.last_name,
             'email': self.email,
