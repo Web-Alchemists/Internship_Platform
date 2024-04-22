@@ -44,11 +44,16 @@
         <select id="company-filter" name="company" class="form-field-item">
 
           <option value="" class="select">All</option>
+
+          {% for company in companies %}
+          <option value="{{company.id}}" class="select">{{company.name}}</option>
+          {% endfor %}
+
+          <!-- <option value="[company.name]" class="select">[company.name]</option>
           <option value="[company.name]" class="select">[company.name]</option>
           <option value="[company.name]" class="select">[company.name]</option>
           <option value="[company.name]" class="select">[company.name]</option>
-          <option value="[company.name]" class="select">[company.name]</option>
-          <option value="[company.name]" class="select">[company.name]</option>
+          <option value="[company.name]" class="select">[company.name]</option> -->
 
         </select>
 
@@ -86,11 +91,15 @@
         <select id="area-filter" name="area" class="form-field-item">
 
           <option value="" class="select">All</option>
+
+          {% for area in areas %}
+          <option value="{{area.id}}" class="select">{{area.name}}</option>
+          {% endfor %}
+          <!-- <option value="[area.name]" class="select">[area.name]</option>
           <option value="[area.name]" class="select">[area.name]</option>
           <option value="[area.name]" class="select">[area.name]</option>
           <option value="[area.name]" class="select">[area.name]</option>
-          <option value="[area.name]" class="select">[area.name]</option>
-          <option value="[area.name]" class="select">[area.name]</option>
+          <option value="[area.name]" class="select">[area.name]</option> -->
 
         </select>
 
@@ -108,12 +117,17 @@
         <select id="discipline-filter" name="discipline" class="form-field-item">
 
           <option value="" class="select">All</option>
-          <option value="[discipline.name]" class="select">[discipline.name]</option>
-          <option value="[discipline.name]" class="select">[discipline.name]</option>
-          <option value="[discipline.name]" class="select">[discipline.name]</option>
-          <option value="[discipline.name]" class="select">[discipline.name]</option>
-          <option value="[discipline.name]" class="select">[discipline.name]</option>
-          
+
+          {% for discipline in disciplines %}
+          <option value="{{discipline.id}}" class="select">{{discipline.name}}</option>
+          {% endfor %}
+
+          <!-- <option value="[discipline.id]" class="select">[discipline.name]</option>
+          <option value="[discipline.id]" class="select">[discipline.name]</option>
+          <option value="[discipline.id]" class="select">[discipline.name]</option>
+          <option value="[discipline.id]" class="select">[discipline.name]</option>
+          <option value="[discipline.id]" class="select">[discipline.name]</option>
+           -->
         </select>
         
       </td>
@@ -152,11 +166,16 @@
         <select id="residence-requirement" name="residence-requirement" class="form-field-item">
 
           <option value="" class="select">All</option>
+
+          {% for country in countries %}
+          <option value="{{country.id}}" class="select">{{country.name}}</option>
+          {% endfor %}
+
+          <!-- <option value="[country.name]" class="select">[country.name]</option>
           <option value="[country.name]" class="select">[country.name]</option>
           <option value="[country.name]" class="select">[country.name]</option>
           <option value="[country.name]" class="select">[country.name]</option>
-          <option value="[country.name]" class="select">[country.name]</option>
-          <option value="[country.name]" class="select">[country.name]</option>
+          <option value="[country.name]" class="select">[country.name]</option> -->
 
         </select>
 

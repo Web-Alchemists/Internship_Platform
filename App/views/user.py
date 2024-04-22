@@ -1,64 +1,11 @@
 from flask import Blueprint, render_template, jsonify, request, send_from_directory, flash, redirect, url_for
 from flask_jwt_extended import jwt_required, current_user as jwt_current_user
-
+from App.models import *
 from.index import index_views
 
-from App.controllers import (
-    create_user,
-    get_all_users,
-    get_all_users_json,
-    jwt_required
-)
+from App.controllers import *
 
 user_views = Blueprint('user_views', __name__, template_folder='../templates')
-
-# ------------ Template Testing ------------ #
-
-@user_views.route('/signuptype', methods=['GET'])
-def get_signup_type():
-    return render_template('signup_select.html')
-
-@user_views.route('/signup/student', methods=['GET'])
-def signup_role_redirect():
-    role = "student"
-    return render_template('signup.html',role=role)
-
-@user_views.route('/signup/student', methods=['POST'])
-def signup_student_credentials():
-    form_data = request.form
-    return render_template('form_data_test.html', form_data=form_data)
-
-@user_views.route('/signup/student/form', methods=['GET'])
-def signup_student_form():
-    return render_template('student_form.html')
-
-@user_views.route('/signup/student/form', methods=['POST'])
-def signup_student_form_submission():
-    form_data = request.form
-    return render_template('form_data_test.html', form_data=form_data)
-
-@user_views.route('/signup/rep', methods=['GET'])
-def render_signup_page():
-    role = "rep"
-    return render_template('signup.html', role=role)
-
-@user_views.route('/signup/rep', methods=['POST'])
-def signup_rep_credentials():
-    form_data = request.form
-    return render_template('form_data_test.html', form_data=form_data)
-
-@user_views.route('/signup/rep/form', methods=['GET'])
-def signup_rep_form():
-    return render_template('rep_form.html')
-
-@user_views.route('/signup/rep/form', methods=['POST'])
-def signup_rep_form_submission():
-    form_data = request.form
-    return render_template('form_data_test.html', form_data=form_data)
-
-@user_views.route('/login', methods=['GET'])
-def render_login_page():
-    return render_template('login.html')
 
 @user_views.route('/home', methods=['GET'])
 def home_page():
@@ -93,12 +40,20 @@ def view_reps_page_filter():
 
 @user_views.route('/projects', methods=['GET'])
 def view_projects_page():
-    return render_template('view_projects.html')
+    companies = Company.query.all()
+    areas = get_all_areas()
+    disciplines = get_all_disciplines()
+    countries = get_all_countries()
+    return render_template('view_projects.html', companies=companies, areas=areas, disciplines=disciplines, countries=countries)
 
 @user_views.route('/projects', methods=['POST'])
 def view_projects_page_filter():
     form_data = request.form
-    return render_template('form_data_test.html', form_data=form_data)
+    companies = Company.query.all()
+    areas = get_all_areas()
+    disciplines = get_all_disciplines()
+    countries = get_all_countries()
+    return render_template('form_data_test.html', companies=companies, areas=areas, disciplines=disciplines, countries=countries, form_data=form_data)
 
 @user_views.route('/shortlisting', methods=['GET'])
 def shortlisting_page():
